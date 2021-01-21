@@ -1,0 +1,13 @@
+#sidebar ul li.active>a,
+a[aria-expanded="true"] {
+    background: rgb(0,176,240) !important;
+}
+
+#sidebar ul li a:hover {
+    color: rgb(0,176,240) !important;
+    background: rgba(0,176,240,0.2) !important;
+}
+
+.pagination li.active a, .pagination li.active a.page-link {
+    background: #03A9F4;
+}

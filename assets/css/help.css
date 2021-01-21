@@ -1,0 +1,32 @@
+container {
+  max-width: 960px;
+}
+
+.help {
+  width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.help textarea {
+	height: 250px;
+	border: 2px solid #fff;
+	background-color: rgba(241, 241, 241);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.help input {
+	border: 2px solid #fff;
+	background-color: rgba(241, 241, 241);
+	border-radius: 15px;
+	padding: 20px;
+}
+
+.help:focus {
+  z-index: 2;
+  background-color: rgba(77, 211, 233, 0.1);
+  border: 2px solid rgba(77, 211, 233, 0.4);
+}
+
