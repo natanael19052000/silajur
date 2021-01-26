@@ -4,12 +4,12 @@ class Login extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();		
-		$this->load->model('login_model');
+		$this->load->model('m_login');
  
 	}
  
 	function index(){
-		$this->load->view('login_view');
+		$this->load->view('v_login');
 	}
  
 	function aksi_login(){
@@ -19,13 +19,14 @@ class Login extends CI_Controller{
 			'nip' => $NIP,
 			'password' => md5($password)
 			);
-		$cek = $this->login_model->cek_login("akun",$where);
+		$cek = $this->m_login->cek_login("akun",$where);
 		if($cek->num_rows() > 0){
 			
 			$row= $cek->row();
 			$data_session = array(
 				'nip' => $NIP,
 				'nama' => $row->nama,
+				'jabatan' => $row->jabatan,
 				
 				'status' => "login"
 				);

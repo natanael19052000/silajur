@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 22, 2021 at 05:20 AM
+-- Generation Time: Jan 26, 2021 at 03:48 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 8.0.0
 
@@ -32,7 +32,7 @@ CREATE TABLE `akun` (
   `nama` varchar(225) NOT NULL,
   `email` varchar(60) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `id_jabatan` int(2) NOT NULL,
+  `jabatan` enum('Direksi','Divisi Umum','Divisi Keuangan','Divisi IT') NOT NULL,
   `profil` varchar(225) NOT NULL DEFAULT 'default.PNG'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,33 +40,12 @@ CREATE TABLE `akun` (
 -- Dumping data for table `akun`
 --
 
-INSERT INTO `akun` (`nip`, `nama`, `email`, `password`, `id_jabatan`, `profil`) VALUES
-('malasngoding', 'admin', 'admin@admin.com', '10406c1d7b7421b1a56f0d951e952a95', 1, 'default.PNG'),
-('NP001', 'Direksi Shandy', 'direksi.shandy@gmail.com', '18a5726d8227b237064ecef7d1f4e634', 1, 'default.PNG'),
-('NP002', 'Shandy Umum', 'umum.shandy@gmail.com', 'adfab9c56b8b16d6c067f8d3cff8818e', 2, 'default.PNG'),
-('NP003', 'Shandy Keuangan', 'keuangan.shandy@gmail.com', 'a4151d4b2856ec63368a7c784b1f0a6e', 3, 'default.PNG'),
-('NP004', 'Shandy IT', 'it.shandy@gmail.com', '0d149b90e7394297301c90191ae775f0', 4, 'default.PNG');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `jabatan`
---
-
-CREATE TABLE `jabatan` (
-  `id_jabatan` int(3) NOT NULL,
-  `nama_jabatan` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `jabatan`
---
-
-INSERT INTO `jabatan` (`id_jabatan`, `nama_jabatan`) VALUES
-(1, 'Direksi'),
-(2, 'Divisi Umum'),
-(3, 'Divisi Keuangan'),
-(4, 'Divisi IT');
+INSERT INTO `akun` (`nip`, `nama`, `email`, `password`, `jabatan`, `profil`) VALUES
+('malasngoding', 'admin', 'admin@admin.com', '10406c1d7b7421b1a56f0d951e952a95', 'Direksi', 'default.PNG'),
+('NP001', 'Direksi Shandy', 'direksi.shandy@gmail.com', '18a5726d8227b237064ecef7d1f4e634', 'Direksi', 'default.PNG'),
+('NP002', 'Shandy Umum', 'umum.shandy@gmail.com', 'adfab9c56b8b16d6c067f8d3cff8818e', 'Divisi Umum', 'default.PNG'),
+('NP003', 'Shandy Keuangan', 'keuangan.shandy@gmail.com', 'a4151d4b2856ec63368a7c784b1f0a6e', 'Divisi Keuangan', 'default.PNG'),
+('NP004', 'Shandy IT', 'it.shandy@gmail.com', '0d149b90e7394297301c90191ae775f0', 'Divisi IT', 'default.PNG');
 
 -- --------------------------------------------------------
 
@@ -118,26 +97,10 @@ ALTER TABLE `akun`
   ADD PRIMARY KEY (`nip`);
 
 --
--- Indexes for table `jabatan`
---
-ALTER TABLE `jabatan`
-  ADD PRIMARY KEY (`id_jabatan`);
-
---
 -- Indexes for table `jurnal`
 --
 ALTER TABLE `jurnal`
   ADD PRIMARY KEY (`no_jurnal`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `jabatan`
---
-ALTER TABLE `jabatan`
-  MODIFY `id_jabatan` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
