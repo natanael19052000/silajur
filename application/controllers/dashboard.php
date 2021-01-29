@@ -11,6 +11,6 @@ class Dashboard extends CI_Controller{
 	}
  
 	function index(){
-		$this->load->view('v_dashboard');
+		$this->template->load('index','dashboard');
 	}
 }
