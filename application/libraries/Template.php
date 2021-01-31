@@ -1,30 +1,15 @@
-
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-
+<?php
 class Template {
+	protected $_ci;
+	
+	function __construct()
+	{
+		$this->_ci =&get_instance();
+	}
 
-      var $template_data = array();
-
-  function set($name, $value)
-
-  {
-
-   $this->template_data[$name] = $value;
-
-  }
-
-
-  function load($template = '', $view = '' , $view_data = array(), $return = FALSE)
-
-  {               
-
-   $this->CI =& get_instance();
-
-   $this->set('contents', $this->CI->load->view($view, $view_data, TRUE));   
-
-   return $this->CI->load->view($template, $this->template_data, $return);
-
-  }
-
+	function display($template,$data=null)
+	{
+		$data['contents']=$this->_ci->load->view($template,$data, true);
+		$this->_ci->load->view('index',$data);
+	}
 }

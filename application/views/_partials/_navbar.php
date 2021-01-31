@@ -9,7 +9,7 @@
     </a>
    </div>
    <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
-     <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Selamat Datang di SILAJUR</h5>
+     <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Sistem Informasi Laporan & Jurnal</h5>
      <ul class="navbar-nav navbar-nav-right ml-auto">
        <li class="nav-item dropdown">
          <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown"

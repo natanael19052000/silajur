@@ -1,50 +1,61 @@
-<!-- Quick Action Toolbar Starts-->
-<div class="row quick-action-toolbar">
-    <div class="col-md-12 grid-margin">
+<!-- Tabel Pertanggung Jawaban -->
+<div class="row">
+    <div class="col-md-4 grid-margin stretch-card">
         <div class="card">
-            <div class="card-header d-block d-md-flex">
-                <h5 class="mb-0">Quick Actions</h5>
-                <p class="ml-auto mb-0"><i class="icon-bulb"></i></p>
-            </div>
-            <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                    <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>
-                        Create Invoice</button>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                    <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i>
-                        Add Client</button>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                    <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i>
-                        Create Quote</button>
-                </div>
-                <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                    <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i>
-                        Enter Payment</button>
-                </div>
-
+            <div class="card-body">
+                <h4 class="card-title">Pertanggung Jawaban</h4>
+                <p class="card-description">
+                    Daftar Pertanggung Jawaban
+                </p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Kegiatan</th>
+                            <th>Tanggal Kegiatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jacob</td>
+                            <td>Photoshop</td>
+                        </tr>
+                        <tr>
+                            <td>Messsy</td>
+                            <td>Flash</td>
+                        </tr>
+                        <tr>
+                            <td>John</td>
+                            <td>Premier</td>
+                        </tr>
+                        <tr>
+                            <td>Peter</td>
+                            <td>After effects</td>
+                        </tr>
+                        <tr>
+                            <td>Dave</td>
+                            <td>53275535</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <!-- Tabel -->
-    <div class="col-lg-12 grid-margin stretch-card">
+    <!-- Tabel Progres Proposal -->
+    <div class="col-md-8 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Tabel Progres Laporan</h4>
+                <h4 class="card-title">Progres Laporan</h4>
                 <p class="card-description">
-                    List Progres Laporan
+                    Laporan dalam Tahap Proses
                 </p>
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th> # </th>
-                            <th> First name </th>
-                            <th> Progress </th>
-                            <th> Amount </th>
-                            <th> Deadline </th>
+                            <th> No. Surat </th>
+                            <th> Kegiatan </th>
+                            <th> Progres </th>
+                            <th> Satus </th>
+                            <th> Tanggal Pengajuan </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,6 +142,100 @@
                             </td>
                             <td> $ 150.00 </td>
                             <td> June 16, 2015 </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <!-- Tabel Laporaan DiSETUJUI -->
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Laporan DISETUJUI</h4>
+                <p class="card-description"> Daftar Laporan yang Disetujui
+                </p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>No Laporan</th>
+                            <th>Kegiatan</th>
+                            <th>Tanggal Kegiatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- Tabel Laporan DiTOLAK -->
+    <div class="col-lg-6 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Laporan DITOLAK</h4>
+                <p class="card-description"> Daftar Laporan yang Ditolak
+                </p>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>No Laporan</th>
+                            <th>Kegiatan</th>
+                            <th>Tanggal Kegiatan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
+                        </tr>
+                        <tr>
+                            <td>01001</td>
+                            <td>Meeting</td>
+                            <td>01/02/21</td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,6 +1,6 @@
 <?php 
  
-class Dashboard extends CI_Controller{
+class Laporan extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();
@@ -11,9 +11,9 @@ class Dashboard extends CI_Controller{
 	}
  
 	function index(){
-		$data = array( 'title' => 'Dashboard',
+		$data = array( 'title' => 'Laporan',
 						'isi' => 'Ini isi Contoh penggunaan template pada Codeinginter');              
 
-$this->template->display('dashboard',$data); 
+$this->template->display('laporan',$data); 
 	}
 }

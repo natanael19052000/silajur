@@ -21,14 +21,14 @@
       <span class="nav-link">Home</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo base_url('assets/index.html')?>">
+      <a class="nav-link" href="<?php echo site_url('dashboard')?>">
         <span class="menu-title">Dashboard</span>
         <i class="icon-screen-desktop menu-icon"></i>
       </a>
     </li>
     <li class="nav-item nav-category"><span class="nav-link">Aktivitas</span></li>
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+      <a class="nav-link" href="<?php echo site_url('laporan')?>">
         <span class="menu-title">Laporan</span>
         <i class="icon-layers menu-icon"></i>
       </a>

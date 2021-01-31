@@ -4,6 +4,7 @@
 <head>
     <!-- partial:../../partials/_head.php -->
     <?php $this->load->view("_partials/_head.php") ?>
+    <title> <?php echo $title;?> </title>
 </head>
 
 <body>
@@ -18,7 +19,7 @@
             <div class="main-panel">
                 <div class="content-wrapper">
                     <div class="page-header">
-                        <h3 class="page-title"> Dashboard </h3>
+                        <h3 class="page-title"> <?php echo $title;?> </h3>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
