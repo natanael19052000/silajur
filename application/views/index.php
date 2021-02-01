@@ -20,16 +20,10 @@
                 <div class="content-wrapper">
                     <div class="page-header">
                         <h3 class="page-title"> <?php echo $title;?> </h3>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                            </ol>
-                        </nav>
                     </div>
                     <!-- Content -->
                     <?php echo $contents; ?>
-                    
+
                 </div><!-- content-wrapper ends -->
                 <!-- partial:../../partials/_footer.php -->
                 <?php $this->load->view("_partials/_footer.php") ?>

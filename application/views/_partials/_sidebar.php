@@ -4,7 +4,8 @@
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
         <div class="profile-image">
-          <img class="img-xs rounded-circle" src="<?php echo base_url('assets/images/faces/face8.jpg')?>" alt="profile image">
+          <img class="img-xs rounded-circle" src="<?php echo base_url('assets/images/faces/face8.jpg')?>"
+            alt="profile image">
           <div class="dot-indicator bg-success"></div>
         </div>
         <div class="text-wrapper">
@@ -26,15 +27,15 @@
         <i class="icon-screen-desktop menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item nav-category"><span class="nav-link">Aktivitas</span></li>
+    <li class="nav-item nav-category"><span class="nav-link">Formulir</span></li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('laporan')?>">
-        <span class="menu-title">Laporan</span>
-        <i class="icon-layers menu-icon"></i>
+      <a class="nav-link" href="<?php echo site_url('proposal')?>">
+        <span class="menu-title">Proposal</span>
+        <i class="icon-doc menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo base_url('assets/pages/forms/basic_elements.html')?>">
+      <a class="nav-link" href="<?php echo site_url('jurnal')?>">
         <span class="menu-title">Jurnal</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
@@ -42,14 +43,26 @@
     <li class="nav-item nav-category"><span class="nav-link">Riwayat</span></li>
     <li class="nav-item">
       <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-        <span class="menu-title">Riwayat Aktivitas</span>
-        <i class="icon-doc menu-icon"></i>
+        <span class="menu-title">Laporan</span>
+        <i class="icon-layers menu-icon"></i>
       </a>
       <div class="collapse" id="auth">
         <ul class="nav flex-column sub-menu">
-          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('assets/pages/samples/login.html')?>"> Laporan </a></li>
-          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('assets/pages/samples/register.html')?>"> Tanggung Jawab </a></li>
-          <li class="nav-item"> <a class="nav-link" href="<?php echo base_url('assets/pages/samples/error-404.html')?>"> Jurnal </a></li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('assets/pages/samples/login.html')?>">
+              Proposal
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('assets/pages/samples/register.html')?>">
+              Tanggung Jawab
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('assets/pages/samples/error-404.html')?>">
+              Jurnal
+            </a>
+          </li>
         </ul>
       </div>
     </li>

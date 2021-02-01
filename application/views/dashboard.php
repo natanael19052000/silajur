@@ -10,30 +10,30 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Kegiatan</th>
-                            <th>Tanggal Kegiatan</th>
+                            <th class="font-weight-bold">Kegiatan</th>
+                            <th class="font-weight-bold">Tanggal Kegiatan</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>Jacob</td>
-                            <td>Photoshop</td>
+                            <td>01/02/21</td>
                         </tr>
                         <tr>
                             <td>Messsy</td>
-                            <td>Flash</td>
+                            <td>01/02/21</td>
                         </tr>
                         <tr>
                             <td>John</td>
-                            <td>Premier</td>
+                            <td>01/02/21</td>
                         </tr>
                         <tr>
                             <td>Peter</td>
-                            <td>After effects</td>
+                            <td>01/02/21</td>
                         </tr>
                         <tr>
                             <td>Dave</td>
-                            <td>53275535</td>
+                            <td>01/02/21</td>
                         </tr>
                     </tbody>
                 </table>
@@ -51,11 +51,11 @@
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th> No. Surat </th>
-                            <th> Kegiatan </th>
-                            <th> Progres </th>
-                            <th> Satus </th>
-                            <th> Tanggal Pengajuan </th>
+                            <th class="font-weight-bold"> No. Surat </th>
+                            <th class="font-weight-bold"> Kegiatan </th>
+                            <th class="font-weight-bold"> Progres </th>
+                            <th class="font-weight-bold"> Satus </th>
+                            <th class="font-weight-bold"> Tanggal Pengajuan </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,20 +68,20 @@
                                         aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
+                            <td> DITOLAK </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 2 </td>
-                            <td> Messsy Adam </td>
+                            <td> DITERIMA </td>
                             <td>
                                 <div class="progress">
                                     <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
                                         aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $245.30 </td>
-                            <td> July 1, 2015 </td>
+                            <td> DITOLAK </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 3 </td>
@@ -92,8 +92,8 @@
                                         aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $138.00 </td>
-                            <td> Apr 12, 2015 </td>
+                            <td> DITERIMA </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 4 </td>
@@ -104,8 +104,8 @@
                                         aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $ 77.99 </td>
-                            <td> May 15, 2015 </td>
+                            <td> DITOLAK </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 5 </td>
@@ -116,8 +116,8 @@
                                         aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $ 160.25 </td>
-                            <td> May 03, 2015 </td>
+                            <td> DITERIMA </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 6 </td>
@@ -128,8 +128,8 @@
                                         aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $ 123.21 </td>
-                            <td> April 05, 2015 </td>
+                            <td> DITOLAK </td>
+                            <td> 01/02/21 </td>
                         </tr>
                         <tr>
                             <td> 7 </td>
@@ -140,8 +140,8 @@
                                         aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
                                 </div>
                             </td>
-                            <td> $ 150.00 </td>
-                            <td> June 16, 2015 </td>
+                            <td> DITERIMA </td>
+                            <td> 01/02/21 </td>
                         </tr>
                     </tbody>
                 </table>
@@ -160,9 +160,9 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No Laporan</th>
-                            <th>Kegiatan</th>
-                            <th>Tanggal Kegiatan</th>
+                            <th class="font-weight-bold">No Laporan</th>
+                            <th class="font-weight-bold">Kegiatan</th>
+                            <th class="font-weight-bold">Tanggal Kegiatan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -206,9 +206,9 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>No Laporan</th>
-                            <th>Kegiatan</th>
-                            <th>Tanggal Kegiatan</th>
+                            <th class="font-weight-bold">No Laporan</th>
+                            <th class="font-weight-bold">Kegiatan</th>
+                            <th class="font-weight-bold">Tanggal Kegiatan</th>
                         </tr>
                     </thead>
                     <tbody>
