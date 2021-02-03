@@ -27,7 +27,7 @@
         <i class="icon-screen-desktop menu-icon"></i>
       </a>
     </li>
-    <li class="nav-item nav-category"><span class="nav-link">Formulir</span></li>
+    <li class="nav-item nav-category"><span class="nav-link">Aktivitas</span></li>
     <li class="nav-item">
       <a class="nav-link" href="<?php echo site_url('proposal')?>">
         <span class="menu-title">Proposal</span>

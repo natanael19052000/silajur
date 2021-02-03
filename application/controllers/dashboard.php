@@ -14,6 +14,6 @@ class Dashboard extends CI_Controller{
 		$data = array( 'title' => 'Dashboard',
 						'isi' => 'Ini isi Contoh penggunaan template pada Codeinginter');              
 
-		$this->template->display('dashboard',$data); 
+		$this->template->display('dashboard/dashboard',$data); 
 	}
 }

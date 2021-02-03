@@ -14,6 +14,6 @@ class Proposal extends CI_Controller{
 		$data = array( 'title' => 'Proposal',
 						'isi' => 'Ini isi Contoh penggunaan template pada Codeinginter');              
 
-		$this->template->display('proposal',$data); 
+		$this->template->display('proposal/daftar',$data); 
 	}
 }
