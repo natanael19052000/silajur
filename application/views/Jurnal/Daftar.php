@@ -1,14 +1,12 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <div class="row">
-                <h4 class="card-title">Daftar Proposal</h4>
+                <h4 class="card-title">Daftar Jurnal</h4>
                 <a style="float:right;" class="btn btn-sm btn-danger btn-icon-text"
                     href="<?php echo base_url('jurnal/tambah')?>">
                     <i class="icon-cloud-upload btn-icon-prepend"></i>
-                    Upload
+                    Upload Jurnal
                 </a>
-            </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>

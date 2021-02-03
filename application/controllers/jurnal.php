@@ -22,4 +22,16 @@ class Jurnal extends CI_Controller{
 
 		$this->template->display('jurnal/tambah',$data);
 	}
+
+	function detail(){
+		$data = array( 'title' => 'Detail Jurnal');
+
+		$this->template->display('jurnal/detail',$data);
+	}
+
+	function persetujuan(){
+		$data = array( 'title' => 'Persetujuan Jurnal');
+		
+		$this->template->display('jurnal/persetujuan',$data);
+	}
 }

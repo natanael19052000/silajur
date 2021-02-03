@@ -11,8 +11,7 @@ class Proposal extends CI_Controller{
 	}
  
 	function index(){
-		$data = array( 'title' => 'Proposal',
-						'isi' => 'Ini isi Contoh penggunaan template pada Codeinginter');              
+		$data = array( 'title' => 'Proposal');              
 
 		$this->template->display('proposal/daftar',$data); 
 	}
@@ -21,5 +20,17 @@ class Proposal extends CI_Controller{
 		$data = array( 'title' => 'Tambah Proposal');
 		
 		$this->template->display('proposal/tambah',$data);
+	}
+
+	function detail(){
+		$data = array( 'title' => 'Detail Proposal');
+		
+		$this->template->display('proposal/detail',$data);
+	}
+
+	function persetujuan(){
+		$data = array( 'title' => 'Persetujuan Proposal');
+		
+		$this->template->display('proposal/persetujuan',$data);
 	}
 }
