@@ -16,4 +16,10 @@ class Proposal extends CI_Controller{
 
 		$this->template->display('proposal/daftar',$data); 
 	}
+
+	function tambah(){
+		$data = array( 'title' => 'Tambah Proposal');
+		
+		$this->template->display('proposal/tambah',$data);
+	}
 }

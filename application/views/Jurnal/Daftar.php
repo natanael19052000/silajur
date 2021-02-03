@@ -4,8 +4,8 @@
             <div class="row">
                 <h4 class="card-title">Daftar Proposal</h4>
                 <a style="float:right;" class="btn btn-sm btn-danger btn-icon-text"
-                    href="<?php echo base_url('proposal/tambah')?>">
-                    <i class=" icon-cloud-upload btn-icon-prepend"></i>
+                    href="<?php echo base_url('jurnal/tambah')?>">
+                    <i class="icon-cloud-upload btn-icon-prepend"></i>
                     Upload
                 </a>
             </div>

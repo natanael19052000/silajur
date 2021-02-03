@@ -14,6 +14,12 @@ class Jurnal extends CI_Controller{
 		$data = array( 'title' => 'Jurnal',
                         'isi' => 'Ini isi Contoh penggunaan template pada Codeinginter');
         
-        $this->template->display('jurnal',$data); 
+        $this->template->display('jurnal/daftar',$data); 
+	}
+
+	function tambah(){
+		$data = array( 'title' => 'Tambah Jurnal');
+
+		$this->template->display('jurnal/tambah',$data);
 	}
 }
