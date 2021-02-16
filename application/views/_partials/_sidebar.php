@@ -4,19 +4,12 @@
     <li class="nav-item nav-profile">
       <a href="#" class="nav-link">
         <div class="profile-image">
-          <img class="img-xs rounded-circle" src="<?php echo base_url('assets/images/faces/face8.jpg')?>"
-            alt="profile image">
           <div class="dot-indicator bg-success">
           </div>
         </div>
         <div class="text-wrapper">
           <p class="profile-name"><?php echo $this->session->userdata("nama"); ?></p>
           <p class="designation"><?php echo $this->session->userdata("nip"); ?></p>
-        </div>
-        <div class="icon-container">
-          <i class="icon-bubbles"></i>
-          <div class="dot-indicator bg-danger">
-          </div>
         </div>
       </a>
     </li>
@@ -48,22 +41,22 @@
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<?php echo site_url('proposal/tambah')?>">
-        <span class="menu-title">Tambah Proposal</span>
+        <span class="menu-title"> Tambah Proposal </span>
         <i class="icon-doc menu-icon"></i>
       </a>
     </li>
     <li class="nav-item nav-category">
-      <span class="nav-link">Jurnal</span>
+      <span class="nav-link"> Jurnal </span>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<?php echo site_url('jurnal')?>">
-        <span class="menu-title">Daftar Jurnal</span>
+        <span class="menu-title"> Daftar Jurnal </span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="<?php echo site_url('jurnal/detail')?>">
-        <span class="menu-title">Detail Jurnal</span>
+        <span class="menu-title"> Detail Jurnal </span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
@@ -110,12 +103,6 @@
       <a class="nav-link" href="<?php echo site_url('akun')?>">
         <span class="menu-title">Daftar Akun</span>
         <i class="icon-people menu-icon"></i>
-      </a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('akun/detail')?>">
-        <span class="menu-title"> Detail Akun</span>
-        <i class="icon-user menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
