@@ -1,10 +1,11 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <form class="forms-sample" action="<?php echo site_url('akun/update') ?>" method="post" enctype="multipart/form-data">
-            <div class="form-group">
+            <form class="forms-sample" action="<?php echo base_url('akun/update') ?>" method="post"
+                enctype="multipart/form-data">
+                <div class="form-group">
                     <label>NIP</label>
-                    <input type="text" class="form-control" name="nip" value="<?php echo $akun->nip ?>" disabled>
+                    <input type="text" class="form-control" name="nip" readonly value="<?php echo $akun->nip ?>" />
                 </div>
                 <div class="form-group">
                     <label>Nama Lengkap</label>

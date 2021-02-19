@@ -1,107 +1,119 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-                <h4 class="card-title">Daftar Jurnal</h4>
-                <a style="float:right;" class="btn btn-sm btn-danger btn-icon-text"
-                    href="<?php echo base_url('jurnal/tambah')?>">
-                    <i class="icon-cloud-upload btn-icon-prepend"></i>
-                    Upload Jurnal
-                </a>
+            <h4 class="card-title">Daftar Jurnal</h4>
+            <a style="float:left;" class="btn btn-sm btn-inverse-success btn-icon-text"
+                href="<?php echo base_url('jurnal/tambah')?>">
+                <i class=" icon-cloud-upload btn-icon-prepend"></i>
+                Upload Jurnal
+            </a>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold"> No. Surat </th>
-                            <th class="font-weight-bold"> Kegiatan </th>
-                            <th class="font-weight-bold"> Progres </th>
-                            <th class="font-weight-bold"> Satus </th>
+                            <th class="font-weight-bold text-center"> No. Jurnal </th>
+                            <th class="font-weight-bold"> Agenda </th>
+                            <th class="font-weight-bold text-center"> Satus </th>
                             <th class="font-weight-bold"> Tanggal Pengajuan </th>
+                            <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td> 1 </td>
+                            <td class="text-center"> 1 </td>
                             <td> Herman Beck </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%"
-                                        aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITOLAK </td>
+                            <td  class="text-center"> DITOLAK </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 2 </td>
+                            <td class="text-center"> 2 </td>
                             <td> DITERIMA </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 75%"
-                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITOLAK </td>
+                            <td class="text-center"> DITOLAK </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 3 </td>
+                            <td class="text-center"> 3 </td>
                             <td> John Richards </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 90%"
-                                        aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITERIMA </td>
+                            <td class="text-center"> DITERIMA </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 4 </td>
+                            <td class="text-center"> 4 </td>
                             <td> Peter Meggik </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
-                                        aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITOLAK </td>
+                            <td class="text-center"> DITOLAK </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">Delete</a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 5 </td>
+                            <td class="text-center"> 5 </td>
                             <td> Edward </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 35%"
-                                        aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITERIMA </td>
+                            <td class="text-center"> DITERIMA </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 6 </td>
+                            <td class="text-center"> 6 </td>
                             <td> John Doe </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-info" role="progressbar" style="width: 65%"
-                                        aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITOLAK </td>
+                            <td  class="text-center"> DITOLAK </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                         <tr>
-                            <td> 7 </td>
+                            <td class="text-center"> 7 </td>
                             <td> Henry Tom </td>
-                            <td>
-                                <div class="progress">
-                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 20%"
-                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                </div>
-                            </td>
-                            <td> DITERIMA </td>
+                            <td class="text-center"> DITERIMA </td>
                             <td> 01/02/21 </td>
+                            <td>
+                                <a href="#" class="btn btn-inverse-info btn-sm" role="button">
+                                    Detail
+                                </a>
+                                <a href="#" class="btn btn-inverse-danger btn-sm" role="button">
+                                    Delete
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

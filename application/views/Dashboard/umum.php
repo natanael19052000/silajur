@@ -11,8 +11,8 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th class="font-weight-bold">Kegiatan</th>
-                                <th class="font-weight-bold">Tanggal Kegiatan</th>
+                                <th class="font-weight-bold">Agenda</th>
+                                <th class="font-weight-bold">Tanggal Agenda</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,7 +55,7 @@
                         <thead>
                             <tr>
                                 <th class="font-weight-bold"> No. Surat </th>
-                                <th class="font-weight-bold"> Kegiatan </th>
+                                <th class="font-weight-bold"> Agenda </th>
                                 <th class="font-weight-bold"> Progres </th>
                                 <th class="font-weight-bold"> Satus </th>
                                 <th class="font-weight-bold"> Tanggal Pengajuan </th>
@@ -166,8 +166,8 @@
                         <thead>
                             <tr>
                                 <th class="font-weight-bold">No Laporan</th>
-                                <th class="font-weight-bold">Kegiatan</th>
-                                <th class="font-weight-bold">Tanggal Kegiatan</th>
+                                <th class="font-weight-bold">Agenda</th>
+                                <th class="font-weight-bold">Tanggal Agenda</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -214,8 +214,8 @@
                         <thead>
                             <tr>
                                 <th class="font-weight-bold">No Laporan</th>
-                                <th class="font-weight-bold">Kegiatan</th>
-                                <th class="font-weight-bold">Tanggal Kegiatan</th>
+                                <th class="font-weight-bold">Agenda</th>
+                                <th class="font-weight-bold">Tanggal Agenda</th>
                             </tr>
                         </thead>
                         <tbody>

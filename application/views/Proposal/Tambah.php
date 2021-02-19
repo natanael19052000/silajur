@@ -2,29 +2,39 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Form Pengajuan Proposal</h4>
-            <p class="card-description"> Isikan data berikut untuk mengajukan proposal </p>
-            <form class="forms-sample">
-                <div class="form-group">
-                    <label for="exampleInputName1">Kegiatan</label>
-                    <input type="text" class="form-control" name="kegiatan" placeholder="Nama/Judul Kegiatan">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail3">Tanggal Kegiatan</label>
-                    <input type="email" class="form-control" name="tgl_kegiatan"
-                        placeholder="Tanggal Kegiatan Berlangsung">
-                </div>
-                <div class="form-group">
-                    <label>File Proposal</label>
-                    <input type="file" name="file_proposal" class="file-upload-default">
-                    <div class="input-group col-xs-12">
-                        <input type="text" class="form-control file-upload-info" disabled
-                            placeholder="Upload File Proposal">
-                        <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-primary" type="button">Pilih File</button>
-                        </span>
+            <p class="card-description"> Isikan data berikut untuk mengajukan Proposal </p>
+            <form class="forms-sample" action="<?php echo base_url('Proposal/add') ?>" method="post"
+                enctype="multipart/form-data">
+                <input type="hidden" name="nip" value="<?php echo $this->session->userdata("nip");?>"/>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Nama Agenda</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control"
+                        name="agenda" placeholder="Masukkan nama Agenda">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success mr-2">Submit</button>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Tanggal Agenda</label>
+                    <div class="col-sm-3">
+                        <input type="date" class="form-control"
+                        name="tgl_agenda" placeholder="Pilih Tanggal Agenda">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Berita Acara</label>
+                    <div class="col-sm-9">
+                        <textarea type="text" rows="6"
+                        name="berita_acara" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Dokumen Pendukung</label>
+                    <div class="col-sm-9">
+                        <input type="file"
+                        name="dok_Proposal" class="form-control-file">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
                 <button class="btn btn-light">Cancel</button>
             </form>
         </div>

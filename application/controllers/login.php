@@ -4,11 +4,15 @@ class Login extends CI_Controller{
  
 	function __construct(){
 		parent::__construct();		
-		$this->load->model('m_login');
+		$this->load->model('M_login');
  
 	}
  
 	function index(){
+		if($this->session->userdata('status') == "login"){
+			redirect(base_url("dashboard"));
+		}
+		
 		$this->load->view('v_login');
 	}
  
@@ -19,7 +23,7 @@ class Login extends CI_Controller{
 			'nip' => $NIP,
 			'password' => md5($password)
 			);
-		$cek = $this->m_login->cek_login("akun",$where);
+		$cek = $this->M_login->cek_login("akun",$where);
 		if($cek->num_rows() > 0){
 			
 			$row= $cek->row();
@@ -33,7 +37,7 @@ class Login extends CI_Controller{
  
 			$this->session->set_userdata($data_session);
  
-			redirect(base_url("dashboard"));
+			redirect(base_url("Dashboard"));
  
 		}else{
 			echo "NIP dan Password SALAH !";
@@ -42,6 +46,6 @@ class Login extends CI_Controller{
  
 	function logout(){
 		$this->session->sess_destroy();
-		redirect(base_url('login'));
+		redirect(base_url('Login'));
 	}
 }

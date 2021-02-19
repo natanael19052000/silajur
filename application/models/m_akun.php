@@ -19,8 +19,8 @@ class M_akun extends CI_Model{
         return $this->db->get_where('akun', ['nip' => $nip])->row();
     }
 
-    public function update($data, $nip){
-        return $this->db->where('nip', $nip)->update('akun', $data);
+    public function update($data, $where){
+        return $this->db->where($where)->replace('akun', $data);
     }
 
 	public function delete($nip) {

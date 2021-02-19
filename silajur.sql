@@ -55,7 +55,7 @@ INSERT INTO `akun` (`nip`, `nama`, `email`, `password`, `jabatan`, `profil`) VAL
 
 CREATE TABLE `jurnal` (
   `no_jurnal` varchar(30) NOT NULL,
-  `no_proposal` varchar(30) NOT NULL,
+  `no_Proposal` varchar(30) NOT NULL,
   `judul_jurnal` tinytext NOT NULL,
   `tgl_up_jurnal` date NOT NULL,
   `file_jurnal` tinytext NOT NULL,
@@ -67,16 +67,16 @@ CREATE TABLE `jurnal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `proposal`
+-- Table structure for table `Proposal`
 --
 
-CREATE TABLE `proposal` (
-  `no_proposal` varchar(30) NOT NULL,
+CREATE TABLE `Proposal` (
+  `no_Proposal` varchar(30) NOT NULL,
   `nip` varchar(12) NOT NULL,
-  `judul_proposal` tinytext NOT NULL,
-  `tgl_kegiatan` date NOT NULL,
-  `file_proposal` tinytext NOT NULL,
-  `tgl_up_proposal` datetime NOT NULL,
+  `judul_Proposal` tinytext NOT NULL,
+  `tgl_Agenda` date NOT NULL,
+  `file_Proposal` tinytext NOT NULL,
+  `tgl_up_Proposal` datetime NOT NULL,
   `status_direksi` enum('0','1','2') NOT NULL,
   `tgl_direksi` datetime NOT NULL,
   `catatan_direksi` text NOT NULL,

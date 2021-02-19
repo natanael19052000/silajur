@@ -28,19 +28,19 @@
       <span class="nav-link">Proposal</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('proposal')?>">
+      <a class="nav-link" href="<?php echo base_url('Proposal')?>">
         <span class="menu-title">Daftar Proposal</span>
         <i class="icon-doc menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('proposal/detail')?>">
+      <a class="nav-link" href="<?php echo base_url('Proposal/detail')?>">
         <span class="menu-title"> Detail Proposal</span>
         <i class="icon-doc menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('proposal/tambah')?>">
+      <a class="nav-link" href="<?php echo base_url('Proposal/tambah')?>">
         <span class="menu-title"> Tambah Proposal </span>
         <i class="icon-doc menu-icon"></i>
       </a>
@@ -49,19 +49,19 @@
       <span class="nav-link"> Jurnal </span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('jurnal')?>">
+      <a class="nav-link" href="<?php echo base_url('Jurnal')?>">
         <span class="menu-title"> Daftar Jurnal </span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('jurnal/detail')?>">
+      <a class="nav-link" href="<?php echo base_url('Jurnal/detail')?>">
         <span class="menu-title"> Detail Jurnal </span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('jurnal/tambah')?>">
+      <a class="nav-link" href="<?php echo base_url('Jurnal/tambah')?>">
         <span class="menu-title">Tambah Jurnal</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
@@ -70,13 +70,13 @@
       <span class="nav-link">Persetujuan</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('proposal/persetujuan')?>">
+      <a class="nav-link" href="<?php echo base_url('Proposal/persetujuan')?>">
         <span class="menu-title">Persetujuan Proposal</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('jurnal/persetujuan')?>">
+      <a class="nav-link" href="<?php echo base_url('Jurnal/persetujuan')?>">
         <span class="menu-title">Persetujuan Jurnal</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
@@ -85,13 +85,13 @@
       <span class="nav-link">Laporan</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('laporan')?>">
+      <a class="nav-link" href="<?php echo base_url('Laporan')?>">
         <span class="menu-title">Daftar Laporan</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('laporan/detail')?>">
+      <a class="nav-link" href="<?php echo base_url('Laporan/detail')?>">
         <span class="menu-title">Detail Laporan</span>
         <i class="icon-book-open menu-icon"></i>
       </a>
@@ -100,19 +100,19 @@
       <span class="nav-link">Akun</span>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('akun')?>">
+      <a class="nav-link" href="<?php echo base_url('Akun')?>">
         <span class="menu-title">Daftar Akun</span>
         <i class="icon-people menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('akun/edit')?>">
+      <a class="nav-link" href="<?php echo base_url('Akun/edit')?>">
         <span class="menu-title"> Edit Akun</span>
         <i class=" icon-user-following menu-icon"></i>
       </a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="<?php echo site_url('akun/tambah')?>">
+      <a class="nav-link" href="<?php echo base_url('Akun/tambah')?>">
         <span class="menu-title">Tambah Akun</span>
         <i class=" icon-user-follow menu-icon"></i>
       </a>
