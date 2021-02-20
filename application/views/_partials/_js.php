@@ -1,11 +1,29 @@
-<!-- plugins:js -->
-<script src="<?php echo base_url('assets/vendors/js/vendor.bundle.base.js')?>"></script>
-<!-- endinject -->
-<!-- Plugin js for this page -->
-<!-- End plugin js for this page -->
-<!-- inject:js -->
-<script src="<?php echo base_url('assets/js/off-canvas.js')?>"></script>
-<script src="<?php echo base_url('assets/js/misc.js')?>"></script>
-<!-- endinject -->
-<!-- Custom js for this page -->
-<!-- End custom js for this page -->
+ <!-- Bootstrap core JavaScript-->
+ <script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
+ <script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+ <!-- Core plugin JavaScript-->
+ <script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
+
+ <!-- Custom scripts for all pages-->
+ <script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+
+ <!-- Page level plugins -->
+ <script src="<?= base_url('assets/'); ?>vendor/chart.js/Chart.min.js"></script>
+
+ <!-- Page level custom scripts -->
+ <script src="<?= base_url('assets/'); ?>js/demo/chart-area-demo.js"></script>
+ <script src="<?= base_url('assets/'); ?>js/demo/chart-pie-demo.js"></script>
+
+ <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
+ <script>
+     $('.custom-file-input').on('change', function() {
+         let fileName = $(this).val().split('\\').pop();
+         $(this).next('.custom-file-label').addClass("selected").html(fileName);
+     });
+
+     $(document).ready(function() {
+         $('.data').DataTable();
+     });
+ </script>
