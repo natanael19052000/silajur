@@ -14,7 +14,7 @@ class M_proposal extends CI_Model{
         return $this->db->insert('proposal', $data);
     }
 
-    public function edit($id_Proposal){
+    public function edit($id_proposal){
         return $this->db->get_where('proposal', ['id_proposal' => $id_proposal])->row();
     }
 

@@ -27,7 +27,7 @@
                     <label class="col-sm-3 col-form-label">Dokumen Pendukung</label>
                     <div class="col-sm-9">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                            <input type="file" name="dok_proposal" class="custom-file-input" id="inputGroupFile01">
                             <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
                         </div>
                     </div>

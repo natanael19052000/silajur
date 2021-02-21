@@ -34,19 +34,18 @@
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Lampiran Dokumen</label>
                         <div class="col-sm-9">
-                            <input type="file" name="file_Proposal" class="file-upload-default">
                             <div class="input-group col-xs-12">
                                 <input type="text" class="form-control file-upload-info" readonly placeholder="Upload File Proposal">
                                 <span class="input-group-append">
                                     <button class="file-upload-browse btn btn-info" type="button">
-                                        Downlaod
+                                        Download
                                     </button>
                                 </span>
                             </div>
                         </div>
                 </form>
             </div>
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-primary mt-5 mb-4">
                 Kembali
             </button>
         </div>
