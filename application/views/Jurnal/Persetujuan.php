@@ -1,57 +1,38 @@
-<div class="col-12 grid-margin stretch-card">
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                ID :
-                <strong>01/01/01/2018</strong>
-                <span class="float-right">
-                    <strong>Status:</strong> Pending
-                </span>
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Daftar Jurnal</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-hover data">
+                    <thead>
+                        <tr>
+                            <th class="font-weight-bold text-center"> No. Jurnal </th>
+                            <th class="font-weight-bold"> Agenda </th>
+                            <th class="font-weight-bold text-center"> Satus </th>
+                            <th class="font-weight-bold"> Tanggal Pengajuan </th>
+                            <th class="font-weight-bold text-center"> Aksi </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($Jurnal as $Jurnal) { ?>
+                            <tr>
+                                <td align="center"><?php echo $Jurnal->id_proposal ?></td>
+                                <td><?php echo $Jurnal->agenda ?></td>
+                                <td align="center">-</td>
+                                <td><?php echo $Jurnal->record_tgl ?></td>
+                                <td align="right">
+                                    <a href="<?= base_url('Jurnal/detail/' . $Jurnal->id_proposal); ?>" class="btn btn-info btn-sm" role="button">
+                                        Detail
+                                    </a>
+                                    <a href="<?= base_url('Jurnal/delete/' . $Jurnal->id_proposal); ?>" c lass="btn btn-danger btn-sm" role="button">
+                                        Delete</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
             </div>
-            <div class="card-body">
-                <div class="text-right">
-                    <div>
-                        <strong>Tanggal Upload </strong>
-                    </div>
-                    <div>01/01/21</div>
-                </div>
-                <div class="text-center grid-margin mb-4 mt-2">
-                    <h3>Detail Proposal</h3>
-                </div>
-                <form class="forms-sample">
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Agenda</label>
-                        <div class="col-sm-9">
-                            <input type="text" class="form-control" Readonly>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Tanggal Agenda</label>
-                        <div class="col-sm-9">
-                            <input type="date" class="form-control" Readonly>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Lampiran Dokumen</label>
-                        <div class="col-sm-9">
-                            <div class="input-group col-xs-12">
-                                <input type="text" class="form-control file-upload-info" readonly placeholder="Upload File Proposal">
-                                <span class="input-group-append">
-                                    <button class="file-upload-browse btn btn-info" type="button">
-                                        Download
-                                    </button>
-                                </span>
-                            </div>
-                        </div>
-                </form>
-            </div>
-            <button type="button" class="btn btn-primary mt-5 mb-4">
-                Kembali
-            </button>
         </div>
-        <div class="card-footer"></div>
     </div>
-
-</div>
-
 </div>

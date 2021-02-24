@@ -33,7 +33,7 @@
                 </div>
             </div>
             <button class="btn btn-success" value="upload">Submit</button>
-            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-outline-light">Cancel</button>
             </form>
         </div>
     </div>

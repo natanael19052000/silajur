@@ -45,7 +45,7 @@
                         </div>
                 </form>
             </div>
-            <button type="button" class="btn btn-primary mt-5 mb-4">
+            <button type="button" class="btn btn-autline-secondary mt-5 mb-4">
                 Kembali
             </button>
         </div>

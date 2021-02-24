@@ -23,11 +23,11 @@
                                 <td><?php echo $Proposal->record_tgl ?></td>
                                 <td align="right">
                                     <a href="<?= base_url('Proposal/detail/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-info btn-sm" role="button">
+                                    class="btn btn-outline-info btn-sm" role="button">
                                         Detail
                                     </a>
                                     <a href="<?= base_url('Proposal/delete/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-danger btn-sm" role="button">
+                                    class="btn btn-putline-danger btn-sm" role="button">
                                         Delete</a>
                                 </td>
                             </tr>

@@ -23,11 +23,11 @@
                                 <td><?php echo $Jurnal->record_tgl ?></td>
                                 <td align="right">
                                     <a href="<?= base_url('Jurnal/detail/' . $Jurnal->id_proposal); ?>" 
-                                    class="btn btn-info btn-sm" role="button">
+                                    class="btn btn-outline-info btn-sm" role="button">
                                         Detail
                                     </a>
                                     <a href="<?= base_url('Jurnal/delete/' . $Jurnal->id_proposal); ?>" c
-                                    lass="btn btn-danger btn-sm" role="button">
+                                    lass="btn btn-outline-danger btn-sm" role="button">
                                         Delete</a>
                                 </td>
                             </tr>

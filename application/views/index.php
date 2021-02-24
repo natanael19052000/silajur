@@ -74,11 +74,39 @@
                 <div class="modal-body">Silahkan Klik tombol Logout untuk Konfirmasi Keluar</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout')?>">Logout</a>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- Konfirmasi Modal-->
+    <div class="modal fade" id="konfirmasiModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Konfimasi</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Silahkan Klik tombol <strong>SETUJU</strong> apabila menyetujui Proposal
+                    & <strong>TOLAK</strong> Apabila tidak menyetujui
+                    <div class="row m-2 mt-3">
+                        <span>
+                            <a class="btn btn-primary float-right" href="<?= base_url('Login/logout') ?>">
+                                Logout
+                            </a>
+                        </span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <?php $this->load->view('_partials/_js') ?>
 </body>
