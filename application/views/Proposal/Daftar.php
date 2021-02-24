@@ -2,118 +2,36 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Daftar Proposal</h4>
-            <a style="float:left;" class="btn btn-sm btn-success btn-icon-text" href="<?php echo base_url('Proposal/tambah') ?>">
-                <i class=" icon-cloud-upload btn-icon-prepend"></i>
-                Upload Proposal
-            </a>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover data">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold text-center"> No. Surat </th>
+                            <th class="font-weight-bold text-center"> ID Proposal </th>
                             <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Satus </th>
+                            <th class="font-weight-bold text-center"> Status </th>
                             <th class="font-weight-bold"> Tanggal Pengajuan </th>
                             <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center"> 1 </td>
-                            <td> Herman Beck </td>
-                            <td class="text-center"> DITOLAK </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 2 </td>
-                            <td> DITERIMA </td>
-                            <td class="text-center"> DITOLAK </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 3 </td>
-                            <td> John Richards </td>
-                            <td class="text-center"> DITERIMA </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 4 </td>
-                            <td> Peter Meggik </td>
-                            <td class="text-center"> DITOLAK </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 5 </td>
-                            <td> Edward </td>
-                            <td class="text-center"> DITERIMA </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 6 </td>
-                            <td> John Doe </td>
-                            <td class="text-center"> DITOLAK </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"> 7 </td>
-                            <td> Henry Tom </td>
-                            <td class="text-center"> DITERIMA </td>
-                            <td> 01/02/21 </td>
-                            <td>
-                                <a href="#" class="btn btn-info btn-sm" role="button">
-                                    Detail
-                                </a>
-                                <a href="#" class="btn btn-danger btn-sm" role="button">
-                                    Delete
-                                </a>
-                            </td>
-                        </tr>
+                        <?php
+                        foreach ($Proposal as $Proposal) { ?>
+                            <tr>
+                                <td align="center"><?php echo $Proposal->id_proposal ?></td>
+                                <td><?php echo $Proposal->agenda ?></td>
+                                <td align="center">-</td>
+                                <td><?php echo $Proposal->record_tgl ?></td>
+                                <td align="right">
+                                    <a href="<?= base_url('Proposal/detail/' . $Proposal->id_proposal); ?>" 
+                                    class="btn btn-info btn-sm" role="button">
+                                        Detail
+                                    </a>
+                                    <a href="<?= base_url('Proposal/delete/' . $Proposal->id_proposal); ?>" 
+                                    class="btn btn-danger btn-sm" role="button">
+                                        Delete</a>
+                                </td>
+                            </tr>
+                        <?php } ?>
                     </tbody>
                 </table>
             </div>
