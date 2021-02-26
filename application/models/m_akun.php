@@ -2,7 +2,7 @@
 class M_akun extends CI_Model{
     
     
-    public function getAll() {
+    public function getAll(){
     $this->db->select('*'); 
     $this->db->from('akun');
 	$this->db->where('jabatan !=','divisi it');
@@ -11,7 +11,7 @@ class M_akun extends CI_Model{
     return $query;
     }
 
-    public function create($data) {
+    public function create($data){
         return $this->db->insert('akun', $data);
     }
 

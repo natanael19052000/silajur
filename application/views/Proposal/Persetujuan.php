@@ -23,11 +23,25 @@
                                 <td><?php echo $Proposal->agenda ?></td>
                                 <td align="center">-</td>
                                 <td><?php echo $Proposal->record_tgl ?></td>
-                                <td align="right">
-                                    <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-primary btn-sm" role="button">
-                                        Konfirmasi
-                                    </a>
+                                <td align="center">
+                                    <?php
+                                    if ($Proposal->status == 0) { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" 
+                                        class="btn btn-danger btn-circle btn-sm">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    <?php } elseif ($Proposal->status == 1) { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" 
+                                        class="btn btn-success btn-circle btn-sm">
+                                            <i class="fas fa-check"></i>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" 
+                                        class="btn btn-primary btn-sm" role="button">
+                                            Konfirmasi
+                                        </a>
+                                    <?php } ?>
+
                                 </td>
                             </tr>
                         <?php } ?>

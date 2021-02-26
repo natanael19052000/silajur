@@ -1,10 +1,8 @@
 <?php
 class M_proposal extends CI_Model
 {
-
-
-    public function getAll()
-    {
+    // Daftar Proposal
+    public function getAll(){
         $this->db->select('*');
         $this->db->from('proposal');
 
@@ -12,23 +10,23 @@ class M_proposal extends CI_Model
         return $query;
     }
 
-    public function create($data)
-    {
+    // Tambah Proposal
+    public function create($data){
         return $this->db->insert('proposal', $data);
     }
 
-    public function edit($id_proposal)
-    {
+    // Data Edit Proposal
+    public function edit($id_proposal){
         return $this->db->get_where('proposal', ['id_proposal' => $id_proposal])->row();
     }
 
-    public function delete($where)
-    {
+    // Delete Proposal
+    public function delete($where){
         return $this->db->where($where)->delete('proposal');
     }
 
-    public function direksi()
-    {
+    // Daftar proposal halaman direksi
+    public function direksi(){
         $this->db->select('proposal.*, akun.nama');
         $this->db->from('proposal');
         $this->db->join('akun', 'akun.nip=proposal.nip');
@@ -37,8 +35,8 @@ class M_proposal extends CI_Model
         return $query;
     }
 
-    public function dir_detail($id_proposal)
-    {
+    // Detail Proposal Halaman Direksi
+    public function dir_detail($id_proposal){
         $this->db->select('*');
         $this->db->from('proposal');
         $this->db->join('akun', 'akun.nip=proposal.nip');
@@ -47,4 +45,15 @@ class M_proposal extends CI_Model
         $query = $this->db->get()->row();
         return $query;
     }
+
+    // Apabila Propposal Diterima
+    public function diterima($data){
+        return $this->db->insert('jurnal', $data);
+    }
+
+    // Apabila Proposal Ditolak
+    public function catatan($data, $where){
+        return $this->db->where($where)->update('proposal', $data);
+    }
+
 }

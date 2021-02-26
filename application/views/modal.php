@@ -32,15 +32,20 @@
                     Silahkan Klik tombol <strong>SETUJU</strong> apabila menyetujui Proposal
                     & <strong>TOLAK</strong> Apabila tidak menyetujui
                 </div>
-                <span class="float-right mt-3 mb-2">
-                    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#konfirmasiModal">
-                        <strong>
-                            SETUJU
-                        </strong>
-                    </a>
-                </span>
+                <form action="<?= base_url('Proposal/diterima') ?>" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="<?= $Proposal->id_proposal ?>" name="id_proposal" />
+                    <input type="hidden" value="<?= $Proposal->dok_proposal ?>" name="dok_proposal" />
+                    <input type="hidden" value="1" name="status" />
+                    <span class="float-right mt-3 mb-2">
+                        <button class="btn btn-success" type="submit">
+                            <strong>
+                                SETUJU
+                            </strong>
+                        </button>
+                    </span>
+                </form>
                 <span class="float-left mt-3 mb-2">
-                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#tolakModal">
+                    <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#tolakModal" data-dismiss="modal">
                         <strong>
                             TOLAK!!
                         </strong>
@@ -65,19 +70,19 @@
                 </button>
             </div>
             <div class="modal-body">
-            Jika ada catatan silahkan isi data berikut
-                <form action="Proposal/tolak">
+                Jika ada catatan silahkan isi data berikut
+                <form action="<?= base_url('Proposal/catatan') ?>" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="<?= $Proposal->id_proposal ?>" name="id_proposal" />
+                    <input type="hidden" value="0" name="status" />
                     <div class="form-group">
                         <label class="col-form-label">Catatan :</label>
-                        
-                            <textarea type="text" rows="4" name="catatan" class="form-control"></textarea>
-                        </div>
-                </form>
+                        <textarea type="text" rows="4" name="catatan" class="form-control"></textarea>
+                    </div>
             </div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                <button class="btn btn-success">submit</button>
             </div>
+            </form>
         </div>
     </div>
 </div>
