@@ -1,34 +1,38 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Daftar Jurnal</h4>
+            <h4 class="card-title">Daftar Proposal</h4>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover data">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold text-center"> No. Jurnal </th>
+                            <th class="font-weight-bold text-center"> ID Proposal </th>
                             <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Satus </th>
-                            <th class="font-weight-bold"> Tanggal Pengajuan </th>
+                            <th class="font-weight-bold"> Tanggal Agenda </th>
                             <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($Jurnal as $Jurnal) { ?>
+                        foreach ($Proposal as $Proposal) { ?>
                             <tr>
-                                <td align="center"><?php echo $Jurnal->id_proposal ?></td>
-                                <td><?php echo $Jurnal->agenda ?></td>
-                                <td align="center">-</td>
-                                <td><?php echo $Jurnal->record_tgl ?></td>
-                                <td align="right">
-                                    <a href="<?= base_url('Jurnal/detail/' . $Jurnal->id_proposal); ?>" 
-                                    class="btn btn-outline-info btn-sm" role="button">
-                                        Detail
-                                    </a>
-                                    <a href="<?= base_url('Jurnal/delete/' . $Jurnal->id_proposal); ?>" c
-                                    lass="btn btn-outline-danger btn-sm" role="button">
-                                        Delete</a>
+                                <td align="center"><?php echo $Proposal->id_proposal ?></td>
+                                <td><?php echo $Proposal->agenda ?></td>
+                                <td><?php echo $Proposal->tgl_agenda ?></td>
+                                <td align="center">
+                                    <?php
+                                    if ($Proposal->dok_jurnal == "N/A") { ?>
+                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" 
+                                        class="btn btn-primary btn-circle btn-sm">
+                                            <i class="fas fa-upload"></i>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" 
+                                        class="btn btn-success btn-circle btn-sm">
+                                            <i class="fas fa-check"></i>
+                                        </a>
+                                    <?php } ?>
+
                                 </td>
                             </tr>
                         <?php } ?>

@@ -10,8 +10,8 @@
             </div>
             <div class="modal-body">Silahkan Klik tombol Logout untuk Konfirmasi Keluar</div>
             <div class="modal-footer">
-                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="<?= base_url('Login/logout') ?>">Logout</a>
+                <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger" href="<?= base_url('Login/logout') ?>">Logout</a>
             </div>
         </div>
     </div>

@@ -1,22 +1,22 @@
 <?php 
  
 class Proposal extends CI_Controller{
- 
 	function __construct(){
 		parent::__construct();
+		// Memanggil Modal Global
 		$this->load->model('M_proposal');
+		// Library Upload
 		$this->load->library('upload');
-	
+		// Verifikasi Login ke semua halaman
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
 		}
 	}
- 
+
 	// Halaman Daftar Proposal
 	function index(){
-		$data = array( 'title' => 'Proposal',
-						'Proposal' => $this->M_proposal->getAll() );              
-
+		$data = array( 'title' 		=> 'Proposal',
+						'Proposal' 	=> $this->M_proposal->getAll() );              
 		$this->template->display('Proposal/Daftar',$data); 
 	}
 
@@ -31,7 +31,6 @@ class Proposal extends CI_Controller{
 	function do_upload(){
 		$uploaddir = './uploads/proposal/';
 		$uploadfile = $uploaddir . basename($_FILES['dok_proposal']['name']);
-
 		if (move_uploaded_file($_FILES['dok_proposal']['tmp_name'], $uploadfile)) {
 			$data = [
 				'agenda'		=> $this->input->post('agenda'),
@@ -39,20 +38,18 @@ class Proposal extends CI_Controller{
 				'berita_acara'	=> $this->input->post('berita_acara'),
 				'dok_proposal'	=> $_FILES['dok_proposal']['name']
 			];
-
 			//kalau form diisi dengan benar maka simpan data ke table user
 			$this->M_proposal->create($data);
-
 			redirect('Proposal');
 		} else {
 			echo "Possible file upload attack!\n";
 		}
 	}
 
-	// Data Detaal Proposal
-	function detail($id_proposal = 0){
-		$data = array( 'title' => 'Detail Proposal',
-						'Proposal' => $this->M_proposal->edit($id_proposal));
+	// Data Detail Proposal
+	function detail($id_proposal = null){
+		$data = array( 'title'		=> 'Detail Proposal',
+						'Proposal'	=> $this->M_proposal->edit($id_proposal));
 		
 		$this->template->display('Proposal/Detail',$data);
 	}
@@ -61,7 +58,7 @@ class Proposal extends CI_Controller{
 	function download($proposal){
 		$this->load->helper('download');
 		$name = $proposal;
-		$data = file_get_contents('./uploads/foldername/' . $proposal);
+		$data = file_get_contents('./uploads/proposal/' . $proposal);
 		force_download($name, $data);
 		redirect('Proposal');
 	}
@@ -74,8 +71,8 @@ class Proposal extends CI_Controller{
 
 	// Halaman Daftar Proposal Direksi
 	public function persetujuan(){
-		$data = array( 'title' => 'Persetujuan Proposal',
-						'Proposal' => $this->M_proposal->direksi());
+		$data = array( 'title'		=> 'Persetujuan Proposal',
+						'Proposal' 	=> $this->M_proposal->direksi());
 		
 		$this->template->display('proposal/Persetujuan',$data);
 	}
@@ -85,24 +82,20 @@ class Proposal extends CI_Controller{
 		$data = ['id_proposal'		=> $this->input->post('id_proposal'),
 				'dok_proposal'		=> $this->input->post('dok_proposal')];
 		$status = ['status'			=> $this->input->post('status')];
-		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
+		$where 	= ['id_proposal'	=> $this->input->post('id_proposal')];
 		
 		$this->M_proposal->catatan($status, $where);
-
 		$this->M_proposal->diterima($data);
-
 		redirect('Proposal/persetujuan');
 	}
 
 	// Apabila Proposal Ditolak maka akan menyimpan catatan di tabel proposal
 	public function catatan(){
 		$data 	= ['catatan' 			=> $this->input->post('catatan'),
-				  'status' 				=> $this->input->post('status')];
+					'status' 			=> $this->input->post('status')];
 		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
-
 		//kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_proposal->catatan($data, $where);
-
 		redirect('Proposal/persetujuan');
 	}
 
@@ -112,8 +105,6 @@ class Proposal extends CI_Controller{
 			'title' => 'Detail Proposal',
 			'Proposal' => $this->M_proposal->dir_detail($id_proposal)
 		);
-
 		$this->template->display('Proposal/Konfirmasi', $data);
 	}
-	
 }

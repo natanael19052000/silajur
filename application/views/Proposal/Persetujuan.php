@@ -9,7 +9,6 @@
                             <th class="font-weight-bold text-center"> ID Proposal </th>
                             <th class="font-weight-bold"> Pengaju </th>
                             <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Status </th>
                             <th class="font-weight-bold"> Tanggal Pengajuan </th>
                             <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
@@ -21,7 +20,6 @@
                                 <td align="center"><?php echo $Proposal->id_proposal ?></td>
                                 <td><?php echo $Proposal->nama ?></td>
                                 <td><?php echo $Proposal->agenda ?></td>
-                                <td align="center">-</td>
                                 <td><?php echo $Proposal->record_tgl ?></td>
                                 <td align="center">
                                     <?php
