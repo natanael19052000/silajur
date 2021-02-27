@@ -29,20 +29,28 @@ class Proposal extends CI_Controller{
 
 	// Mengupload File Proposal
 	function do_upload(){
-		$uploaddir = './uploads/proposal/';
-		$uploadfile = $uploaddir . basename($_FILES['dok_proposal']['name']);
-		if (move_uploaded_file($_FILES['dok_proposal']['tmp_name'], $uploadfile)) {
+		$nama = $this->input->post('agenda');
+		$config['upload_path']          = './assets/uploads/Proposal/';
+		$config['allowed_types']        = 'pdf|doc|docx|rar';
+		$config['max_size']             = 10000; // 10 MB
+		$config['file_name'] = time() . '-' . date("Ymd") . '-' . $nama;
+
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+
+		if ($this->upload->do_upload('dok_proposal')) {
 			$data = [
 				'agenda'		=> $this->input->post('agenda'),
 				'tgl_agenda'	=> $this->input->post('tgl_agenda'),
 				'berita_acara'	=> $this->input->post('berita_acara'),
-				'dok_proposal'	=> $_FILES['dok_proposal']['name']
+				'dok_proposal'	=> $this->upload->data('file_name')
 			];
 			//kalau form diisi dengan benar maka simpan data ke table user
 			$this->M_proposal->create($data);
 			redirect('Proposal');
 		} else {
-			echo "Possible file upload attack!\n";
+			$error = array('error' => $this->upload->display_errors());
+			print_r($error);
 		}
 	}
 
@@ -65,7 +73,8 @@ class Proposal extends CI_Controller{
 
 	// Delete Proposal
 	public function delete($id_proposal){
-		$this->M_proposal->delete($id_proposal);
+		$where = ['id_proposal' => $id_proposal];
+		$this->M_proposal->delete($where);
 		redirect('Proposal');
 	}
 

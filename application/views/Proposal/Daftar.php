@@ -1,5 +1,5 @@
 <div class="col-lg-12 grid-margin stretch-card">
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-body">
             <h4 class="card-title">Daftar Proposal</h4>
             <div class="table-responsive">
@@ -27,7 +27,7 @@
                                         Detail
                                     </a>
                                     <a href="<?= base_url('Proposal/delete/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-putline-danger btn-sm" role="button">
+                                    class="btn btn-outline-danger btn-sm" role="button">
                                         Delete</a>
                                 </td>
                             </tr>

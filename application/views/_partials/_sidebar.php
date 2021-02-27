@@ -72,27 +72,11 @@
     <div class="sidebar-heading">
       Proposal
     </div>
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#daftarproposal" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Daftar Proposal</span>
-      </a>
-      <div id="daftarproposal" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('Proposal') ?>">All Proposal</a>
-          <a class="collapse-item" href="<?= base_url('Proposal') ?>">Selesai</a>
-          <a class="collapse-item" href="<?= base_url('Proposal') ?>">Terkirim</a>
-          <a class="collapse-item" href="<?= base_url('Proposal') ?>">Ditolak</a>
-        </div>
-      </div>
-    </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Proposal/detail') ?>">
+      <a class="nav-link" href="<?= base_url('Proposal') ?>">
         <i class="fas fa-fw fa-chart-area"></i>
-        <span>Detail Proposal</span>
+        <span>Daftar Proposal</span>
       </a>
     </li>
 

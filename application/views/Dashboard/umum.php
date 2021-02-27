@@ -1,7 +1,7 @@
 <!-- Tabel Pertanggung Jawaban -->
 <div class="row">
     <div class="col-md-4 grid-margin stretch-card">
-        <div class="card">
+        <div class="card mb-5">
             <div class="card-body">
                 <h4 class="card-title">Pertanggung Jawaban</h4>
                 <p class="card-description">

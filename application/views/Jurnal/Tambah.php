@@ -1,5 +1,5 @@
 <div class="col-12 grid-margin stretch-card">
-    <div class="card">
+    <div class="card mb-5">
         <div class="card-body">
             <h4 class="card-title">Form Pengajuan Jurnal</h4>
             <p class="card-description"> Isikan data berikut untuk mengajukan Jurnal </p>
