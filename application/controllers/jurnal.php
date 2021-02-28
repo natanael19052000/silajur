@@ -16,10 +16,11 @@ class Jurnal extends CI_Controller{
 	}
 	// Halaman daftar Proposal
 	function index(){
-		$data = array('title' 		=> 'Jurnal',
-						'Proposal' 	=> $this->M_jurnal->getAll());
+		$data = array(
+			'title' 		=> 'Jurnal',
+			'Proposal' 		=> $this->M_jurnal->getAll());
         
-        $this->template->display('jurnal/daftar',$data);
+        $this->template->display('jurnal/Daftar',$data);
 	}
 
 	// Menampilkan detail Proposal dan upload Proposal
@@ -27,7 +28,7 @@ class Jurnal extends CI_Controller{
 		$data = array('title' 		=> 'Detail',
 						'Proposal' 	=> $this->M_jurnal->proposal($id_proposal),
 						'Jurnal' 	=> $this->M_jurnal->jurnal($id_proposal));
-		$this->template->display('jurnal/detail', $data);
+		$this->template->display('jurnal/Detail', $data);
 	}
 
 	// Mengupload File Proposal
@@ -42,7 +43,8 @@ class Jurnal extends CI_Controller{
 		$this->upload->initialize($config);
 
 		if ($this->upload->do_upload('dok_jurnal')) {
-			$data = ['dok_jurnal'	=> $this->upload->data('file_name')];
+			$data = ['dok_jurnal'	=> $this->upload->data('file_name'),
+					'nip_jurnal' => $this->session->userdata('nip')];
 			$where = ['id_proposal'	=> $this->input->post('id_proposal')];
 			//kalau form diisi dengan benar maka simpan data ke table user
 			$this->M_jurnal->upload($where,$data);
@@ -64,9 +66,9 @@ class Jurnal extends CI_Controller{
 
 	function persetujuan(){
 		$data = array( 'title' => 'Persetujuan Jurnal',
-			'Jurnal' 	=> $this->M_jurnal->getAll());
+			'Jurnal' 	=> $this->M_jurnal->direksi());
 		
-		$this->template->display('jurnal/persetujuan',$data);
+		$this->template->display('jurnal/Persetujuan',$data);
 	}
 
 	// Detail Jurnal pada Direksi

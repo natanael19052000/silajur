@@ -8,7 +8,7 @@
                 <span class="float-right">
                     <!-- Apabila status N/A maka muncul tombol Konfirmasi -->
                     <?php if ($Jurnal->status_jurnal == "N/A") { ?>
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#konfirmasiModal">
+                        <a class="btn btn-primary" data-toggle="modal" data-target="#konfirmasiJurnalModal">
                             <strong>Konfirmasi</strong>
                         </a>
                         <!-- Apabila status 1 maka muncul tombol Diterima -->
@@ -47,9 +47,9 @@
                 <!-- form -->
                 <form class="forms-sample">
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Pengaju Proposal</label>
+                        <label class="col-sm-3 col-form-label">Pengaju Jurnal</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" disabled value="<?= $Proposal->nama; ?>">
+                            <input type="text" class="form-control" disabled value="<?= $Jurnal->nama; ?>">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -61,7 +61,9 @@
                         </div>
                     </div>
                     <!-- Jika Proposal ditolak maka akan muncul catatan -->
-                    <?php if ($Jurnal->status_jurnal == "0") { ?>
+                    <?php
+                    if ($Jurnal->status_jurnal == "0"){
+                        ?>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Catatan</label>
                             <div class="col-sm-9">

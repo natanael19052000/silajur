@@ -47,7 +47,7 @@
                         </a>
                     </div>
                 </div>
-                <?php if ($Jurnal->dok_jurnal != "N/A") { ?>
+                <?php if ($Jurnal->dok_jurnal != null) { ?>
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Jurnal</label>
                         <div class="col-sm-9 mt-2">

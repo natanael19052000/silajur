@@ -32,7 +32,7 @@ class Proposal extends CI_Controller{
 		$nama = $this->input->post('agenda');
 		$config['upload_path']          = './assets/uploads/Proposal/';
 		$config['allowed_types']        = 'pdf|doc|docx|rar';
-		$config['max_size']             = 10000; // 10 MB
+		$config['max_size']             = 5120; // 5 MB
 		$config['file_name'] = time() . '-' . date("Ymd") . '-' . $nama;
 
 		$this->load->library('upload', $config);
@@ -40,6 +40,7 @@ class Proposal extends CI_Controller{
 
 		if ($this->upload->do_upload('dok_proposal')) {
 			$data = [
+				'id_proposal'	=> date("Ymd") . time(),
 				'agenda'		=> $this->input->post('agenda'),
 				'nip'			=> $this->input->post('nip'),
 				'tgl_agenda'	=> $this->input->post('tgl_agenda'),

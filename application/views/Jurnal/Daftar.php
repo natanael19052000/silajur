@@ -21,14 +21,13 @@
                                 <td><?php echo $Proposal->tgl_agenda ?></td>
                                 <td align="center">
                                     <?php
-                                    if ($Proposal->dok_jurnal == "N/A") { ?>
-                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" 
-                                        class="btn btn-primary btn-circle btn-sm">
+                                    if ($Proposal->dok_jurnal == null){
+                                        ?>
+                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" class="btn btn-primary btn-circle btn-sm">
                                             <i class="fas fa-upload"></i>
                                         </a>
                                     <?php } else { ?>
-                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" 
-                                        class="btn btn-success btn-circle btn-sm">
+                                        <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
                                             <i class="fas fa-check"></i>
                                         </a>
                                     <?php } ?>
