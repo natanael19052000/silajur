@@ -21,8 +21,12 @@ class M_proposal extends CI_Model
     }
 
     // Delete Proposal
-    public function delete($where){
-        return $this->db->where($where)->delete('proposal');
+    public function delete($id_proposal){
+        $row = $this->db->where('id_proposal', $id_proposal)->get('proposal')->row();
+        unlink('assets/uploads/proposal/'.$row->dok_proposal);
+        $this->db->where('id_proposal', $id_proposal);
+        $this->db->delete('proposal');
+        return true;     
     }
 
     // Daftar proposal halaman direksi

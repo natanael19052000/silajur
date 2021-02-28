@@ -2,6 +2,7 @@
 class M_jurnal extends CI_Model
 {
 
+    // Ambil data JOIN Proposal dan Jurnal
     public function getAll(){
         $this->db->select('*');
         $this->db->from('jurnal');
@@ -11,34 +12,28 @@ class M_jurnal extends CI_Model
         return $query;
     }
 
+    // Upload Jurnal
     public function upload($where,$data){
         return $this->db->where($where)->update('jurnal', $data);
     }
 
+    // Ambil data Proposal
     public function proposal($id_proposal){
         return $this->db->get_where('proposal', ['id_proposal' => $id_proposal])->row();
     }
+
+    // Ambil data Jurnal
     public function jurnal($id_proposal){
         return $this->db->get_where('jurnal', ['id_proposal' => $id_proposal])->row();
     }
 
-    public function delete($where)
-    {
+    // Delete Proposal
+    public function delete($where){
         return $this->db->where($where)->delete('proposal');
     }
 
-    public function direksi()
-    {
-        $this->db->select('proposal.*, akun.nama');
-        $this->db->from('proposal');
-        $this->db->join('akun', 'akun.nip=proposal.nip');
-
-        $query = $this->db->get()->result();
-        return $query;
-    }
-
-    public function dir_detail($id_proposal)
-    {
+    // JOIN data Proposal dan Akun
+    public function dir_detail($id_proposal){
         $this->db->select('*');
         $this->db->from('proposal');
         $this->db->join('akun', 'akun.nip=proposal.nip');

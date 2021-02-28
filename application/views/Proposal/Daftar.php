@@ -7,9 +7,9 @@
                     <thead>
                         <tr>
                             <th class="font-weight-bold text-center"> ID Proposal </th>
-                            <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Status </th>
                             <th class="font-weight-bold"> Tanggal Pengajuan </th>
+                            <th class="font-weight-bold"> Agenda </th>
+                            <th class="font-weight-bold text-center"> Tanggal Agenda </th>
                             <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
                     </thead>
@@ -18,17 +18,24 @@
                         foreach ($Proposal as $Proposal) { ?>
                             <tr>
                                 <td align="center"><?php echo $Proposal->id_proposal ?></td>
-                                <td><?php echo $Proposal->agenda ?></td>
-                                <td align="center">-</td>
                                 <td><?php echo $Proposal->record_tgl ?></td>
-                                <td align="right">
-                                    <a href="<?= base_url('Proposal/detail/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-outline-info btn-sm" role="button">
-                                        Detail
-                                    </a>
-                                    <a href="<?= base_url('Proposal/delete/' . $Proposal->id_proposal); ?>" 
-                                    class="btn btn-outline-danger btn-sm" role="button">
-                                        Delete</a>
+                                <td><?php echo $Proposal->agenda ?></td>
+                                <td align="center"><?php echo $Proposal->tgl_agenda ?></td>
+                                <td align="center">
+                                    <?php
+                                    if ($Proposal->status == 0) { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-danger btn-circle btn-sm">
+                                            <i class="fas fa-times"></i>
+                                        </a>
+                                    <?php } elseif ($Proposal->status == 1) { ?>
+                                        <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
+                                            <i class="fas fa-check"></i>
+                                        </a>
+                                    <?php } else { ?>
+                                        <a href="<?= base_url('Proposal/detail/' . $Proposal->id_proposal); ?>" class="btn btn-outline-info btn-sm" role="button">
+                                            Detail
+                                        </a>
+                                    <?php } ?>
                                 </td>
                             </tr>
                         <?php } ?>

@@ -98,35 +98,11 @@
       Jurnal
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#daftarjurnal" aria-expanded="true" aria-controls="collapsePages">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Daftar Jurnal</span>
-      </a>
-      <div id="daftarjurnal" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <a class="collapse-item" href="<?= base_url('Jurnal') ?>">All Jurnal</a>
-          <a class="collapse-item" href="<?= base_url('Jurnal') ?>">Selesai</a>
-          <a class="collapse-item" href="<?= base_url('Jurnal') ?>">Terkirim</a>
-          <a class="collapse-item" href="<?= base_url('Jurnal') ?>">Ditolak</a>
-        </div>
-      </div>
-    </li>
-
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Jurnal/detail') ?>">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Detail Jurnal</span>
-      </a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Jurnal/tambah') ?>">
-        <i class="fas fa-fw fa-plus"></i>
-        <span>Tambah Jurnal</span>
+      <a class="nav-link" href="<?= base_url('Jurnal') ?>">
+        <i class="fas fa-fw fa-folder"></i>
+        <span>Daftar Jurnal</span>
       </a>
     </li>
 

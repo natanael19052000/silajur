@@ -51,7 +51,7 @@
                         </div>
                 </form>
             </div>
-            <a type="button" href="<?= base_url('Proposal') ?>" class="btn btn-outline-primary mt-5 mb-4">
+            <a type="button" href="<?= base_url('Proposal') ?>" class="btn btn-outline-secondary mt-5 mb-4">
                 Kembali
             </a>
         </div>

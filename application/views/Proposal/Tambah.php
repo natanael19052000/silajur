@@ -32,8 +32,8 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success" value="upload">Submit</button>
-            <button class="btn btn-outline-light">Cancel</button>
+            <button class="btn btn-success mr-2" value="upload">Submit</button>
+            <button class="btn btn-outline-secondary ml-1">Cancel</button>
             </form>
         </div>
     </div>

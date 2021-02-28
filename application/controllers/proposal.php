@@ -1,12 +1,12 @@
 <?php 
- 
 class Proposal extends CI_Controller{
 	function __construct(){
 		parent::__construct();
-		// Memanggil Modal Global
+		// Modal
 		$this->load->model('M_proposal');
-		// Library Upload
+		// Library 
 		$this->load->library('upload');
+		$this->load->library('form_validation');
 		// Verifikasi Login ke semua halaman
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
@@ -41,6 +41,7 @@ class Proposal extends CI_Controller{
 		if ($this->upload->do_upload('dok_proposal')) {
 			$data = [
 				'agenda'		=> $this->input->post('agenda'),
+				'nip'			=> $this->input->post('nip'),
 				'tgl_agenda'	=> $this->input->post('tgl_agenda'),
 				'berita_acara'	=> $this->input->post('berita_acara'),
 				'dok_proposal'	=> $this->upload->data('file_name')
@@ -66,15 +67,14 @@ class Proposal extends CI_Controller{
 	function download($proposal){
 		$this->load->helper('download');
 		$name = $proposal;
-		$data = file_get_contents('./uploads/proposal/' . $proposal);
+		$data = file_get_contents('./assets/uploads/proposal/' . $proposal);
 		force_download($name, $data);
 		redirect('Proposal');
 	}
 
 	// Delete Proposal
 	public function delete($id_proposal){
-		$where = ['id_proposal' => $id_proposal];
-		$this->M_proposal->delete($where);
+		$this->M_proposal->delete($id_proposal);
 		redirect('Proposal');
 	}
 

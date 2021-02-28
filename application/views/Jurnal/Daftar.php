@@ -32,7 +32,6 @@
                                             <i class="fas fa-check"></i>
                                         </a>
                                     <?php } ?>
-
                                 </td>
                             </tr>
                         <?php } ?>

@@ -39,7 +39,6 @@
                                             Konfirmasi
                                         </a>
                                     <?php } ?>
-
                                 </td>
                             </tr>
                         <?php } ?>

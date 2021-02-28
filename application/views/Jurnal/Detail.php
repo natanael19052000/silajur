@@ -24,19 +24,19 @@
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Agenda</label>
                     <div class="col-sm-9">
-                        <input type="text" class="form-control" disabled value="<?= $Proposal->agenda; ?>">
+                        <input type="text" class="form-control" readonly name="agenda" value="<?= $Proposal->agenda; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Tanggal Agenda</label>
                     <div class="col-sm-9">
-                        <input type="date" class="form-control" disabled value="<?= $Proposal->tgl_agenda; ?>">
+                        <input type="date" class="form-control" readonly value="<?= $Proposal->tgl_agenda; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-3 col-form-label">Berita Acara</label>
                     <div class="col-sm-9">
-                        <textarea type="text" rows="6" class="form-control" disabled><?= $Proposal->berita_acara; ?></textarea>
+                        <textarea type="text" rows="6" class="form-control" readonly><?= $Proposal->berita_acara; ?></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -47,32 +47,32 @@
                         </a>
                     </div>
                 </div>
-                <?php if ($Jurnal->dok_jurnal != "N/A") {?>
-                   <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Jurnal</label>
-                    <div class="col-sm-9 mt-2">
-                        <a href="<?= base_url('Jurnal/download/' . $Jurnal->dok_jurnal); ?>">
-                            <?= $Jurnal->dok_jurnal ?>
-                        </a>
-                    </div>
-                </div>
-                <?php } else {?>
-                    <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
-                <div class="form-group row">
-                    <label class="col-sm-3 col-form-label">Upload Jurnal</label>
-                    <div class="col-sm-9">
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" id="dok_jurnal" name="dok_jurnal">
-                            <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                <?php if ($Jurnal->dok_jurnal != "N/A") { ?>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Jurnal</label>
+                        <div class="col-sm-9 mt-2">
+                            <a href="<?= base_url('Jurnal/download/' . $Jurnal->dok_jurnal); ?>">
+                                <?= $Jurnal->dok_jurnal ?>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <span class="float-right mt-5 mb-2">
-                    <button class="btn btn-success" type="submit">
-                        Submit
-                    </button>
-                </span>
-                <?php }?>
+                <?php } else { ?>
+                    <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Upload Jurnal</label>
+                        <div class="col-sm-9">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="dok_jurnal" name="dok_jurnal">
+                                <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="float-right mt-5 mb-2">
+                        <button class="btn btn-success" type="submit">
+                            Submit
+                        </button>
+                    </span>
+                <?php } ?>
                 </form>
                 <a type="button" href="<?= base_url('Jurnal') ?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali

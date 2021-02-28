@@ -7,12 +7,12 @@
                 <strong><?= $Proposal->id_proposal; ?></strong>
                 <span class="float-right">
                     <!-- Apabila status N/A maka muncul tombol Konfirmasi -->
-                    <?php if ($Proposal->status == "N/A") { ?>
+                    <?php if ($Jurnal->status_jurnal == "N/A") { ?>
                         <a class="btn btn-primary" data-toggle="modal" data-target="#konfirmasiModal">
                             <strong>Konfirmasi</strong>
                         </a>
                         <!-- Apabila status 1 maka muncul tombol Diterima -->
-                    <?php } elseif ($Proposal->status == "1") { ?>
+                    <?php } elseif ($Jurnal->status_jurnal == "1") { ?>
                         <a class="btn btn-success btn-icon-split">
                             <span class="icon text-white-50">
                                 <i class="fas fa-check"></i>
@@ -38,14 +38,43 @@
                     <div>
                         <strong>Tanggal Upload </strong>
                     </div>
-                    <div><?= $Proposal->record_tgl; ?></div>
+                    <div><?= $Jurnal->record_tgl_jurnal; ?></div>
                 </div>
                 <!-- Title -->
                 <div class="text-center grid-margin mb-4 mt-2">
-                    <h3><strong>Detail Proposal</strong></h3>
+                    <h3><strong>Detail Jurnal</strong></h3>
                 </div>
                 <!-- form -->
                 <form class="forms-sample">
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Pengaju Proposal</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" disabled value="<?= $Proposal->nama; ?>">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Jurnal</label>
+                        <div class="col-sm-9 mt-2">
+                            <a href="<?= base_url('Jurnal/download/' . $Jurnal->dok_jurnal); ?>">
+                                <?= $Jurnal->dok_jurnal ?>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Jika Proposal ditolak maka akan muncul catatan -->
+                    <?php if ($Jurnal->status_jurnal == "0") { ?>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Catatan</label>
+                            <div class="col-sm-9">
+                                <textarea type="text" rows="6" class="form-control" disabled><?= $Proposal->catatan; ?></textarea>
+                            </div>
+                        </div>
+                    <?php } ?>
+                    <!-- End catatan -->
+
+                    <div class="text-center grid-margin mb-4 mt-5">
+                        <h3><strong>Proposal</strong></h3>
+                    </div>
+
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Pengaju Proposal</label>
                         <div class="col-sm-9">
@@ -78,18 +107,8 @@
                             </a>
                         </div>
                     </div>
-                    <!-- Jika Proposal ditolak maka akan muncul catatan -->
-                    <?php if ($Proposal->status == "0") { ?>
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Catatan</label>
-                            <div class="col-sm-9">
-                                <textarea type="text" rows="6" class="form-control" disabled><?= $Proposal->catatan; ?></textarea>
-                            </div>
-                        </div>
-                    <?php } ?>
-                    <!-- End catatan -->
                 </form>
-                <a type="button" href="<?= base_url('Proposal/persetujuan') ?>" class="btn btn-outline-secondary mt-5 mb-4">
+                <a type="button" href="<?= base_url('Jurnal/persetujuan') ?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali
                 </a>
             </div>
