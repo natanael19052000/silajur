@@ -1,24 +1,29 @@
 <?php 
- 
 class laporan extends CI_Controller{
- 
 	function __construct(){
 		parent::__construct();
-	
+		// Memanggil Model
+		$this->load->model('M_jurnal');
+		// Konfirmasi Login
 		if($this->session->userdata('status') != "login"){
 			redirect(base_url("login"));
 		}
 	}
- 
+	// Halaman Daftar Laporan
 	function index(){
-		$data = array( 'title' => 'Laporan');              
-
+		$data = array( 
+			'title' 	=> 'Laporan',
+			'Jurnal' 	=> $this->M_jurnal->laporan()
+		);              
 		$this->template->display('laporan/daftar',$data); 
 	}
-
-	function detail(){
-		$data = array( 'title' => 'Detail Laporan');
-		
+	// Halaman Detail Laporan
+	function detail($id_proposal){
+		$data = array(
+			'title'		=> 'Detail Laporan',
+			'Proposal'	=> $this->M_jurnal->dir_detail($id_proposal),
+			'Jurnal'	=> $this->M_jurnal->jurnal($id_proposal)
+		);
 		$this->template->display('laporan/detail',$data);
 	}
 }

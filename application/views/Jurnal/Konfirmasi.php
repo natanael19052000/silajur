@@ -67,7 +67,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Catatan</label>
                             <div class="col-sm-9">
-                                <textarea type="text" rows="6" class="form-control" disabled><?= $Proposal->catatan; ?></textarea>
+                                <textarea type="text" rows="6" class="form-control" disabled><?= $Jurnal->catatan_jurnal; ?></textarea>
                             </div>
                         </div>
                     <?php } ?>

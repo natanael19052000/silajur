@@ -3,6 +3,7 @@
 
 <head>
   <?php $this->load->view('_partials/_head'); ?>
+  <title> <?php echo $title; ?> </title>
 </head>
 
 <body class="bg-gradient-primary">

@@ -1,7 +1,5 @@
 <?php 
- 
 class Jurnal extends CI_Controller{
- 
 	function __construct(){
 		parent::__construct();
 		// Memanggil Model
@@ -22,7 +20,6 @@ class Jurnal extends CI_Controller{
         
         $this->template->display('jurnal/Daftar',$data);
 	}
-
 	// Menampilkan detail Proposal dan upload Proposal
 	function detail($id_proposal = null){
 		$data = array('title' 		=> 'Detail',
@@ -30,7 +27,6 @@ class Jurnal extends CI_Controller{
 						'Jurnal' 	=> $this->M_jurnal->jurnal($id_proposal));
 		$this->template->display('jurnal/Detail', $data);
 	}
-
 	// Mengupload File Proposal
 	function do_upload(){
 		$nama = $this->input->post('agenda');
@@ -38,10 +34,10 @@ class Jurnal extends CI_Controller{
 		$config['allowed_types']        = 'pdf|doc|docx|rar';
 		$config['max_size']             = 10000; // 10 MB
 		$config['file_name'] = time() . '-' . date("Ymd") . '-Jurnal-' . $nama;
-
+		// memakai LIBRARY UPLOAD
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
-
+		// Jika File Sudah terupload
 		if ($this->upload->do_upload('dok_jurnal')) {
 			$data = ['dok_jurnal'	=> $this->upload->data('file_name'),
 					'nip_jurnal' => $this->session->userdata('nip')];
@@ -53,7 +49,6 @@ class Jurnal extends CI_Controller{
 			echo "Possible file upload attack!\n";
 		}
 	}
-
 	// Download Jurnal
 	function download($jurnal){
 		$this->load->helper('download');
@@ -62,21 +57,37 @@ class Jurnal extends CI_Controller{
 		force_download($name, $data);
 		redirect('Proposal');
 	}
-
-
+	// Halaman Daftar Jurnal Direksi
 	function persetujuan(){
-		$data = array( 'title' => 'Persetujuan Jurnal',
-			'Jurnal' 	=> $this->M_jurnal->direksi());
-		
+		$data = array( 
+			'title'		=> 'Persetujuan Jurnal',
+			'Jurnal' 	=> $this->M_jurnal->direksi()
+		);
 		$this->template->display('jurnal/Persetujuan',$data);
 	}
-
+	// Apabila Proposal Diterima maka akan menyimpan di tabel Jurnal
+	public function diterima(){
+		$status = ['status_jurnal'	=> $this->input->post('status')];
+		$where 	= ['id_proposal'	=> $this->input->post('id_proposal')];
+		$this->M_jurnal->catatan($status, $where);
+		redirect('Jurnal/persetujuan');
+	}
+	// Apabila Proposal Ditolak maka akan menyimpan catatan di tabel proposal
+	public function catatan(){
+		$data 	= [
+			'catatan_jurnal' 			=> $this->input->post('catatan'),
+			'status_jurnal' 			=> $this->input->post('status')
+		];
+		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
+		//kalau form diisi dengan benar maka simpan data ke table user
+		$this->M_jurnal->catatan($data, $where);
+		redirect('Jurnal/persetujuan');
+	}
 	// Detail Jurnal pada Direksi
-	public function konfirmasi($id_proposal)
-	{
+	public function konfirmasi($id_proposal){
 		$data = array(
-			'title' => 'Detail Jurnal',
-			'Proposal' => $this->M_jurnal->dir_detail($id_proposal),
+			'title' 	=> 'Detail Jurnal',
+			'Proposal' 	=> $this->M_jurnal->dir_detail($id_proposal),
 			'Jurnal'	=> $this->M_jurnal->jurnal($id_proposal)
 		);
 		$this->template->display('Jurnal/Konfirmasi', $data);

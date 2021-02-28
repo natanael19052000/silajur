@@ -12,32 +12,29 @@ class Proposal extends CI_Controller{
 			redirect(base_url("login"));
 		}
 	}
-
 	// Halaman Daftar Proposal
 	function index(){
-		$data = array( 'title' 		=> 'Proposal',
-						'Proposal' 	=> $this->M_proposal->getAll() );              
+		$data = array(
+			'title' 	=> 'Proposal',
+			'Proposal' 	=> $this->M_proposal->getAll() );              
 		$this->template->display('Proposal/Daftar',$data); 
 	}
-
 	// Halaman Tambah Proposal
 	function tambah(){
 		$data = array( 'title' => 'Tambah Proposal');
-		
 		$this->template->display('Proposal/Tambah',$data);
 	}
-
 	// Mengupload File Proposal
 	function do_upload(){
 		$nama = $this->input->post('agenda');
 		$config['upload_path']          = './assets/uploads/Proposal/';
 		$config['allowed_types']        = 'pdf|doc|docx|rar';
 		$config['max_size']             = 5120; // 5 MB
-		$config['file_name'] = time() . '-' . date("Ymd") . '-' . $nama;
-
+		$config['file_name'] 			= time() . '-' . date("Ymd") . '-' . $nama;
+		// Memakai LIBRARY UPLOAD
 		$this->load->library('upload', $config);
 		$this->upload->initialize($config);
-
+		// Apabila Berhasil Upload
 		if ($this->upload->do_upload('dok_proposal')) {
 			$data = [
 				'id_proposal'	=> date("Ymd") . time(),
@@ -55,15 +52,13 @@ class Proposal extends CI_Controller{
 			print_r($error);
 		}
 	}
-
 	// Data Detail Proposal
 	function detail($id_proposal = null){
-		$data = array( 'title'		=> 'Detail Proposal',
-						'Proposal'	=> $this->M_proposal->edit($id_proposal));
-		
+		$data = array(
+			'title'		=> 'Detail Proposal',
+			'Proposal'	=> $this->M_proposal->edit($id_proposal));
 		$this->template->display('Proposal/Detail',$data);
 	}
-
 	// Download Proposal
 	function download($proposal){
 		$this->load->helper('download');
@@ -72,43 +67,40 @@ class Proposal extends CI_Controller{
 		force_download($name, $data);
 		redirect('Proposal');
 	}
-
 	// Delete Proposal
 	public function delete($id_proposal){
 		$this->M_proposal->delete($id_proposal);
 		redirect('Proposal');
 	}
-
 	// Halaman Daftar Proposal Direksi
 	public function persetujuan(){
-		$data = array( 'title'		=> 'Persetujuan Proposal',
-						'Proposal' 	=> $this->M_proposal->direksi());
-		
+		$data = array(
+			'title'		=> 'Persetujuan Proposal',
+			'Proposal' 	=> $this->M_proposal->direksi()
+		);
 		$this->template->display('proposal/Persetujuan',$data);
 	}
-
 	// Apabila Proposal Diterima maka akan menyimpan di tabel Jurnal
 	public function diterima(){
 		$data = ['id_proposal'		=> $this->input->post('id_proposal'),
 				'dok_proposal'		=> $this->input->post('dok_proposal')];
 		$status = ['status'			=> $this->input->post('status')];
 		$where 	= ['id_proposal'	=> $this->input->post('id_proposal')];
-		
+		// Update Status Dan Creat data Tabel Jurnal
 		$this->M_proposal->catatan($status, $where);
 		$this->M_proposal->diterima($data);
 		redirect('Proposal/persetujuan');
 	}
-
 	// Apabila Proposal Ditolak maka akan menyimpan catatan di tabel proposal
 	public function catatan(){
-		$data 	= ['catatan' 			=> $this->input->post('catatan'),
-					'status' 			=> $this->input->post('status')];
+		$data 	= [
+			'catatan' 			=> $this->input->post('catatan'),
+			'status' 			=> $this->input->post('status')];
 		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
 		//kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_proposal->catatan($data, $where);
 		redirect('Proposal/persetujuan');
 	}
-
 	// Detail Proposal pada Direksi
 	public function konfirmasi($id_proposal){
 		$data = array(

@@ -48,6 +48,12 @@ class M_jurnal extends CI_Model
         return $query;
     }
 
+    // Apabila Proposal Ditolak
+    public function catatan($data, $where)
+    {
+        return $this->db->where($where)->update('jurnal', $data);
+    }
+
     // JOIN data Proposal dan Akun
     public function dir_detail($id_proposal){
         $this->db->select('*');
@@ -56,6 +62,17 @@ class M_jurnal extends CI_Model
         $this->db->where('id_proposal', $id_proposal);
 
         $query = $this->db->get()->row();
+        return $query;
+    }
+
+    // LAPORAN
+    public function laporan(){
+        $this->db->select('*');
+        $this->db->from('jurnal');
+        $this->db->join('proposal', 'proposal.id_proposal=jurnal.id_proposal');
+        $this->db->where(['status_jurnal' => '1']);
+
+        $query = $this->db->get()->result();
         return $query;
     }
 }

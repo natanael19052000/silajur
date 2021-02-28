@@ -90,6 +90,22 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Laporan
+    </div>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('Laporan') ?>">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Daftar Laporan</span>
+      </a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
   <?php
   } elseif ($_SESSION['jabatan'] == 'Divisi Keuangan') {
   ?>
@@ -103,6 +119,21 @@
       <a class="nav-link" href="<?= base_url('Jurnal') ?>">
         <i class="fas fa-fw fa-folder"></i>
         <span>Daftar Jurnal</span>
+      </a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+      Laporan
+    </div>
+
+    <!-- Nav Item - Tables -->
+    <li class="nav-item">
+      <a class="nav-link" href="<?= base_url('Laporan') ?>">
+        <i class="fas fa-fw fa-file"></i>
+        <span>Daftar Laporan</span>
       </a>
     </li>
 
@@ -143,14 +174,6 @@
       <a class="nav-link" href="<?= base_url('Laporan') ?>">
         <i class="fas fa-fw fa-file"></i>
         <span>Daftar Laporan</span>
-      </a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Laporan/detail') ?>">
-        <i class="fas fa-fw fa-plus"></i>
-        <span>Detail Laporan</span>
       </a>
     </li>
 
