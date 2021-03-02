@@ -10,7 +10,7 @@
             <div class=" card-body">
                 <!-- Title -->
                 <div class="text-center grid-margin mb-4 mt-2">
-                    <h3><strong>Detail Jurnal</strong></h3>
+                    <h3><strong>Laporan</strong></h3>
                 </div>
                 <!-- form -->
                 <form class="forms-sample">

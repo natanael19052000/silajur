@@ -1,15 +1,15 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <form class="forms-sample" action="<?php echo base_url('akun/update') ?>" method="post"
+            <form class="forms-sample" action="<?= base_url('Akun/update') ?>" method="post"
                 enctype="multipart/form-data">
                 <div class="form-group">
                     <label>NIP</label>
-                    <input type="text" class="form-control" name="nip" readonly value="<?php echo $akun->nip ?>" />
+                    <input type="text" class="form-control" name="nip" readonly value="<?php echo $akun->nip;?>" />
                 </div>
                 <div class="form-group">
                     <label>Nama Lengkap</label>
-                    <input type="name" class="form-control" name="nama" value="<?php echo $akun->nama ?>">
+                    <input type="name" class="form-control" name="nama" value="<?php echo $akun->nama;?>">
                 </div>
                 <div class="form-group">
                     <label>Jabatan</label>
@@ -39,7 +39,8 @@
                             echo "<option value='Divisi Umum'           > Divisi Umum </option>";
                             echo "<option value='Divisi Keuangan'       > Divisi Keuangan </option>";
                             echo "<option value='Divisi IT' selected    > Divisi IT </option>";
-                        }?>
+                        }
+                        ?>
                     </select>
                 </div>
                 <div class="form-group">
@@ -51,7 +52,7 @@
                     <input type="password" class="form-control" name="password">
                 </div>
                 <button type="submit" class="btn btn-success mr-2">Simpan</button>
-                <button class="btn btn-light" type="reset">Reset</button>
+                <a class="btn btn-light" type="button" href="<?= base_url('Akun');?>">Batal</a>
             </form>
         </div>
     </div>

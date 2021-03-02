@@ -72,25 +72,26 @@
                         </a>
                     </div>
                 </div>
-                <?php 
+                <?php
                 // PERTANGGUNG JAWABAN
                 // Jika DOK_JURNAL KOSONG
-                if ($Jurnal->dok_jurnal == null) { ?>
-                <?php 
-                // Jika SUDAH DI UPLOAD
-                if ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL && $Proposal->tanggungan != "Done")
-                {
-                    // KELUAR link DOWNLOAD?>
-                    <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
-                        <div class="col-sm-9 mt-2">
-                            <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
-                                <?= $Proposal->tanggungan ?>
-                            </a>
+                if ($Jurnal->dok_jurnal == NULL) { ?>
+                    <?php
+                    // Jika SUDAH DI UPLOAD
+                    if ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL && $Proposal->tanggungan != "Done") {
+                        // KELUAR link DOWNLOAD
+                    ?>
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
+                            <div class="col-sm-9 mt-2">
+                                <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
+                                    <?= $Proposal->tanggungan ?>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                <?php }
-                // Jika BELUM di UPLOAD maka KELUAR tombol UPLOAD ?>
+                    <?php } else {
+                    // Jika BELUM di UPLOAD maka KELUAR tombol UPLOAD 
+                    ?>
                     <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Upload Jurnal</label>
@@ -106,8 +107,10 @@
                             Submit
                         </button>
                     </span>
+                    <?php } ?>
                 <?php } else {
-                    // Jika DOK_JURNAL TERISI?>
+                    // Jika DOK_JURNAL TERISI
+                ?>
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Jurnal</label>
                         <div class="col-sm-9 mt-2">
@@ -116,8 +119,9 @@
                             </a>
                         </div>
                     </div>
-                <?php } 
-                // END ELSE?>
+                <?php }
+                // END ELSE
+                ?>
                 </form>
                 <a type="button" href="<?= base_url('Jurnal') ?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali

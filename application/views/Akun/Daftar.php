@@ -16,22 +16,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                <!-- Mnampilkan Data Akun -->
+                    <!-- Mnampilkan Data Akun -->
                     <?php
                     $i = 1;
                     foreach ($akun as $akun) { ?>
                         <tr>
-                            <td><?php echo $i++ ?></td>
-                            <td><?php echo $akun->nip ?></td>
-                            <td><?php echo $akun->nama ?></td>
-                            <td><?php echo $akun->email ?></td>
-                            <td><?php echo $akun->jabatan ?></td>
+                            <td><?= $i++ ?></td>
+                            <td><?= $akun->nip ?></td>
+                            <td><?= $akun->nama ?></td>
+                            <td><?= $akun->email ?></td>
+                            <td><?= $akun->jabatan ?></td>
                             <td>
-                                <a href="<?php echo site_url('akun/edit/' . $akun->nip); ?>" class="btn btn-info btn-sm" role="button">
+                                <a href="<?= base_url('Akun/edit/' . $akun->nip); ?>" class="btn btn-info btn-sm" role="button">
                                     Edit
                                 </a>
-                                <a href="<?php echo site_url('akun/delete/' . $akun->nip); ?>" class="btn btn-danger btn-sm" role="button">
-                                    Delete</a>
+                                <a href="<?= base_url('Akun/delete/' . $akun->nip); ?>" class="btn btn-danger btn-sm" role="button">
+                                    Delete
+                                </a>
                             </td>
                         </tr>
                     <?php } ?>

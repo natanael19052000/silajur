@@ -2,14 +2,15 @@
 class Proposal extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		// Verifikasi Login ke semua halaman
+		if ($this->session->userdata('status') != "login") {
+			redirect(base_url("Login"));
+		} else {
 		// Modal
 		$this->load->model('M_proposal');
 		// Library 
 		$this->load->library('upload');
 		$this->load->library('form_validation');
-		// Verifikasi Login ke semua halaman
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
 		}
 	}
 	// Halaman Daftar Proposal
@@ -86,7 +87,7 @@ class Proposal extends CI_Controller{
 			'title'		=> 'Persetujuan Proposal',
 			'Proposal' 	=> $this->M_proposal->direksi()
 		);
-		$this->template->display('proposal/Persetujuan',$data);
+		$this->template->display('Proposal/Persetujuan',$data);
 	}
 	// Apabila Proposal Diterima maka akan menyimpan di tabel Jurnal
 	public function diterima(){
@@ -97,7 +98,7 @@ class Proposal extends CI_Controller{
 		// Update Status Dan Creat data Tabel Jurnal
 		$this->M_proposal->catatan($status, $where);
 		$this->M_proposal->diterima($data);
-		redirect('Proposal/persetujuan');
+		redirect('Proposal/Persetujuan');
 	}
 	// Apabila Proposal Ditolak maka akan menyimpan catatan di tabel proposal
 	public function catatan(){
@@ -107,7 +108,7 @@ class Proposal extends CI_Controller{
 		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
 		//kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_proposal->catatan($data, $where);
-		redirect('Proposal/persetujuan');
+		redirect('Proposal/Persetujuan');
 	}
 	// Detail Proposal pada Direksi
 	public function konfirmasi($id_proposal){

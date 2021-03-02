@@ -2,14 +2,15 @@
 class Jurnal extends CI_Controller{
 	function __construct(){
 		parent::__construct();
+		// Melakukan verifikasi Login ke semua Halaman
+		if ($this->session->userdata('status') != "login") {
+			redirect(base_url("Login"));
+		}else{
 		// Memanggil Model
 		$this->load->model('M_jurnal');
 		$this->load->model('M_proposal');
 		// Memanggil Library
 		$this->load->library('upload');
-		// MElakukan verifikasi Login ke semua Halaman
-		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
 		}
 	}
 	// Halaman daftar Proposal
@@ -18,14 +19,14 @@ class Jurnal extends CI_Controller{
 			'title' 		=> 'Jurnal',
 			'Proposal' 		=> $this->M_jurnal->getAll());
         
-        $this->template->display('jurnal/Daftar',$data);
+        $this->template->display('Jurnal/Daftar',$data);
 	}
 	// Menampilkan detail Proposal dan upload Proposal
 	function detail($id_proposal = null){
 		$data = array('title' 		=> 'Detail',
 						'Proposal' 	=> $this->M_jurnal->proposal($id_proposal),
 						'Jurnal' 	=> $this->M_jurnal->datajurnal($id_proposal));
-		$this->template->display('jurnal/Detail', $data);
+		$this->template->display('Jurnal/Detail', $data);
 	}
 	// Mengupload File Jurnal
 	function do_upload(){
@@ -95,14 +96,14 @@ class Jurnal extends CI_Controller{
 			'title'		=> 'Persetujuan Jurnal',
 			'Jurnal' 	=> $this->M_jurnal->direksi()
 		);
-		$this->template->display('jurnal/Persetujuan',$data);
+		$this->template->display('Jurnal/Persetujuan',$data);
 	}
 	// Apabila Proposal Diterima maka akan menyimpan di tabel Jurnal
 	public function diterima(){
 		$status = ['status_jurnal'	=> $this->input->post('status')];
 		$where 	= ['id_proposal'	=> $this->input->post('id_proposal')];
 		$this->M_jurnal->catatan($status, $where);
-		redirect('Jurnal/persetujuan');
+		redirect('Jurnal/Persetujuan');
 	}
 	// Apabila Proposal Ditolak maka akan menyimpan catatan di tabel proposal
 	public function catatan(){
@@ -113,7 +114,7 @@ class Jurnal extends CI_Controller{
 		$where 	= ['id_proposal'		=> $this->input->post('id_proposal')];
 		//kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_jurnal->catatan($data, $where);
-		redirect('Jurnal/persetujuan');
+		redirect('Jurnal/Persetujuan');
 	}
 	// Detail Jurnal pada Direksi
 	public function konfirmasi($id_proposal){

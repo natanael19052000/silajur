@@ -7,19 +7,19 @@ class Akun extends CI_Controller{
 		$this->load->model('M_akun');
 		// Cek Status Login
 		if($this->session->userdata('status') != "login"){
-			redirect(base_url("login"));
+			redirect(base_url("Login"));
 		}
 	}
 	// Halaman Daftar Akun
 	function index(){
 		$data = array( 'title' => 'Daftar Akun',
 						'akun' => $this->M_akun->getAll() );    
-		$this->template->display('akun/daftar',$data); 
+		$this->template->display('Akun/Daftar',$data); 
 	}
 	// Halaman Tambah Akun
 	function tambah(){
 		$data = array( 'title' => 'Tambah Akun');
-		$this->template->display('akun/tambah',$data);
+		$this->template->display('Akun/Tambah',$data);
 	}
 	// Fungsi Untuk menambah Akun
 	function add(){
@@ -32,7 +32,7 @@ class Akun extends CI_Controller{
 			];
 	    //kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_akun->create($data);
-		redirect('akun');
+		redirect('Akun');
 	}
 	// Update Akun
 	function update(){
@@ -46,18 +46,18 @@ class Akun extends CI_Controller{
 		$where =['nip'	=> $this->input->post('nip')];
 	    //kalau form diisi dengan benar maka simpan data ke table user
 		$this->M_akun->update($data, $where);
-		redirect('akun');
+		redirect('Akun');
 	}
 	// Menampilkan Halaman Detail Akun
     function edit($nip = 0){
 		$data = array( 'title' => 'Edit akun',
 						'akun' => $this->M_akun->edit($nip));
-		$this->template->display('akun/edit',$data);
+		$this->template->display('Akun/Edit',$data);
 	}
 	// Menghapus Akun
 	public function delete($nip){
 		$this->M_akun->delete($nip);
-        redirect('akun');
+        redirect('Akun');
 		}
 
 

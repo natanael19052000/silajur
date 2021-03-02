@@ -1,7 +1,7 @@
 <div class="col-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <form class="forms-sample" action="<?php echo base_url('Proposal/add') ?>" method="post"
+            <form class="forms-sample" action="<?= base_url('Akun/add');?>" method="POST"
                 enctype="multipart/form-data">
                 <div class="form-group">
                     <label>NIP</label>
@@ -22,14 +22,14 @@
                 <div class="form-group">
                     <label>Jabatan</label>
                     <select class="form-control" name="jabatan">
-                        <option value="Direksi">Direksi</option>
-                        <option value="Divisi Umum">Divisi Umum</option>
-                        <option value="Divisi Keuangan">Divisi Keuangan</option>
-                        <option value="Divisi IT">Divisi IT</option>
+                        <option value="Direksi"         >Direksi        </option>
+                        <option value="Divisi Umum"     >Divisi Umum    </option>
+                        <option value="Divisi Keuangan" >Divisi Keuangan</option>
+                        <option value="Divisi IT"       >Divisi IT      </option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-success mr-2">Submit</button>
-                <button class="btn btn-light">Cancel</button>
+                <a class="btn btn-light" type="button" href="<?= base_url('Akun');?>">Cancel</a>
             </form>
         </div>
     </div>

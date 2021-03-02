@@ -23,7 +23,8 @@
   <hr class="sidebar-divider">
   <!--------------------------------------------------------------------------------------------------------------------->
   <!-- MENU DIVISI IT -->
-  <?php if ($this->session->userdata('jabatan') == "Divisi IT") { ?>
+  <?php
+  if ($this->session->userdata('jabatan') == "Divisi IT") { ?>
 
     <!-- Heading -->
     <div class="sidebar-heading">
@@ -35,22 +36,6 @@
       <a class="nav-link" href="<?= base_url('Akun') ?>">
         <i class="fas fa-fw fa-users"></i>
         <span>Daftar Akun</span>
-      </a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Akun/edit') ?>">
-        <i class="fas fa-fw fa-user-circle"></i>
-        <span>Edit Akun</span>
-      </a>
-    </li>
-
-    <!-- Nav Item - Tables -->
-    <li class="nav-item">
-      <a class="nav-link" href="<?= base_url('Akun/edit') ?>">
-        <i class="fas fa-fw fa-user"></i>
-        <span>Detail Akun</span>
       </a>
     </li>
 

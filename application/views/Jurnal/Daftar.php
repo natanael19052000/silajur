@@ -6,40 +6,43 @@
                 <table class="table table-bordered table-hover data">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold"> ID Proposal </th>
-                            <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Tanggal Agenda </th>
-                            <th class="font-weight-bold text-center"> Aksi </th>
+                            <th class="font-weight-bold"            > ID Proposal   </th>
+                            <th class="font-weight-bold"            > Agenda        </th>
+                            <th class="font-weight-bold text-center"> Tanggal Agenda</th>
+                            <th class="font-weight-bold text-center"> Aksi          </th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         // Menampilkan Data JURNAL
-                        foreach ($Proposal as $Proposal) { ?>
+                        foreach ($Proposal as $Proposal) {
+                            ?>
                             <tr>
-                                <td><?php echo $Proposal->id_proposal ?></td>
-                                <td><?php echo $Proposal->agenda ?></td>
-                                <td align="center"><?php echo $Proposal->tgl_agenda ?></td>
+                                <td><?= $Proposal->id_proposal ?></td>
+                                <td><?= $Proposal->agenda ?></td>
+                                <td align="center"><?= $Proposal->tgl_agenda ?></td>
                                 <td align="center">
                                     <?php
                                     // Jika BELUM UPLOAD JURNAL maka keluar TOMBOL UPLOAD
-                                    if ($Proposal->dok_jurnal == NULL){
-                                        ?>
+                                    if ($Proposal->dok_jurnal == NULL) {
+                                    ?>
                                         <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" class="btn btn-primary btn-circle btn-sm">
                                             <i class="fas fa-upload"></i>
                                         </a>
-                                    <?php 
-                                    // jika SUDAH ADA file JURNAL keluar TOMBOL CHECK
+                                    <?php
+                                        // jika SUDAH ADA file JURNAL keluar TOMBOL CHECK
                                     } else { ?>
                                         <a href="<?= base_url('Jurnal/detail/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
                                             <i class="fas fa-check"></i>
                                         </a>
                                     <?php }
-                                    // END ELSE?>
+                                    // END ELSE
+                                    ?>
                                 </td>
                             </tr>
                         <?php }
-                        // END IF ?>
+                        // END IF 
+                        ?>
                     </tbody>
                 </table>
             </div>

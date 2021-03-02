@@ -17,10 +17,18 @@
                         <?php
                         foreach ($Jurnal as $Jurnal) { ?>
                             <tr>
-                                <td align="center"><?php echo $Jurnal->id_proposal ?></td>
-                                <td><?php echo $Jurnal->tgl_agenda ?></td>
-                                <td align="center"><?php echo $Jurnal->agenda ?></td>
-                                <td><?php echo $Jurnal->record_tgl_jurnal ?></td>
+                                <td align="center">
+                                    <?php echo $Jurnal->id_proposal ?>
+                                </td>
+                                <td>
+                                    <?php echo $Jurnal->tgl_agenda ?>
+                                </td>
+                                <td align="center">
+                                    <?php echo $Jurnal->agenda ?>
+                                </td>
+                                <td>
+                                    <?php echo $Jurnal->record_tgl_jurnal ?>
+                                </td>
                                 <td align="center">
                                     <?php
                                     if ($Jurnal->status_jurnal == 0) { ?>
