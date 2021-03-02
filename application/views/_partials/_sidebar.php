@@ -21,8 +21,8 @@
 
   <!-- Divider -->
   <hr class="sidebar-divider">
-
-  <!-- Menu Divisi IT -->
+  <!--------------------------------------------------------------------------------------------------------------------->
+  <!-- MENU DIVISI IT -->
   <?php if ($this->session->userdata('jabatan') == "Divisi IT") { ?>
 
     <!-- Heading -->
@@ -65,7 +65,8 @@
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
     <!-- Divisi IT End -->
-
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!-- MENU DIVISI UMUM -->
   <?php
   } elseif ($_SESSION['jabatan'] == 'Divisi Umum') { ?>
     <!-- Heading -->
@@ -106,6 +107,8 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!-- MENU DIVISI KEUANGAN -->
   <?php
   } elseif ($_SESSION['jabatan'] == 'Divisi Keuangan') {
   ?>
@@ -139,7 +142,8 @@
 
     <!-- Divider -->
     <hr class="sidebar-divider">
-
+    <!--------------------------------------------------------------------------------------------------------------------->
+    <!-- MENU DIREKSI -->
   <?php
   } else {
   ?>

@@ -5,6 +5,31 @@
             <div class="card-header">
                 ID :
                 <strong><?= $Proposal->id_proposal; ?></strong>
+                <span class="float-right">
+                    <!-- Apabila status N/A maka muncul tombol Konfirmasi -->
+                    <?php if ($Proposal->tanggungan == NULL) { ?>
+                        <a class="btn btn-warning" data-toggle="modal" data-target="#tanggunganModal">
+                            <strong>Ajukan Tanggungan</strong>
+                        </a>
+                        <!-- Apabila status 1 maka muncul tombol Diterima -->
+                    <?php } elseif ($Proposal->tanggungan == "Pending") { ?>
+                        <a class="btn btn-info btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-spinner"></i>
+                            </span>
+                            <span class="text"><strong>Pending</strong></span>
+                        </a>
+                        <!-- Apabila status 0 muncul tombol Ditolak -->
+                    <?php } else { ?>
+                        <a class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span class="text"><strong>Done</strong></span>
+                        </a>
+                    <?php } ?>
+                    <!-- END -->
+                </span>
             </div>
             <!-- Body -->
             <div class=" card-body">
@@ -47,16 +72,25 @@
                         </a>
                     </div>
                 </div>
-                <?php if ($Jurnal->dok_jurnal != null) { ?>
+                <?php 
+                // PERTANGGUNG JAWABAN
+                // Jika DOK_JURNAL KOSONG
+                if ($Jurnal->dok_jurnal == null) { ?>
+                <?php 
+                // Jika SUDAH DI UPLOAD
+                if ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL && $Proposal->tanggungan != "Done")
+                {
+                    // KELUAR link DOWNLOAD?>
                     <div class="form-group row">
-                        <label class="col-sm-3 col-form-label">Jurnal</label>
+                        <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
                         <div class="col-sm-9 mt-2">
-                            <a href="<?= base_url('Jurnal/download/' . $Jurnal->dok_jurnal); ?>">
-                                <?= $Jurnal->dok_jurnal ?>
+                            <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
+                                <?= $Proposal->tanggungan ?>
                             </a>
                         </div>
                     </div>
-                <?php } else { ?>
+                <?php }
+                // Jika BELUM di UPLOAD maka KELUAR tombol UPLOAD ?>
                     <input type="hidden" value="<?= $Proposal->id_proposal; ?>" name="id_proposal">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Upload Jurnal</label>
@@ -72,7 +106,18 @@
                             Submit
                         </button>
                     </span>
-                <?php } ?>
+                <?php } else {
+                    // Jika DOK_JURNAL TERISI?>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Jurnal</label>
+                        <div class="col-sm-9 mt-2">
+                            <a href="<?= base_url('Jurnal/download/' . $Jurnal->dok_jurnal); ?>">
+                                <?= $Jurnal->dok_jurnal ?>
+                            </a>
+                        </div>
+                    </div>
+                <?php } 
+                // END ELSE?>
                 </form>
                 <a type="button" href="<?= base_url('Jurnal') ?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali

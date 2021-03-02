@@ -14,6 +14,7 @@
                 <div class="form-group">
                     <label>Jabatan</label>
                     <select name="jabatan" class="form-control">
+                    <!-- SELECT JABATAN -->
                         <?php 
                         if ($akun->jabatan == "Direksi"){
                             echo "<option value='Direksi' selected  > Direksi </option>";

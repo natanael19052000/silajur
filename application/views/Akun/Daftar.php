@@ -16,6 +16,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                <!-- Mnampilkan Data Akun -->
                     <?php
                     $i = 1;
                     foreach ($akun as $akun) { ?>

@@ -21,6 +21,10 @@ class M_jurnal extends CI_Model
     public function proposal($id_proposal){
         return $this->db->get_where('proposal', ['id_proposal' => $id_proposal])->row();
     }
+    // Ambil data Proposal
+    public function datajurnal($id_proposal){
+        return $this->db->get_where('jurnal', ['id_proposal' => $id_proposal])->row();
+    }
 
     // Ambil data Jurnal
     public function jurnal($id_proposal){

@@ -16,6 +16,33 @@
         </div>
     </div>
 </div>
+<!------------------------------------------------------------------------------------------------------------------------------------------>
+<!-- Tanggungan -->
+<div class="modal fade" id="tanggunganModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Konfimasi</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda Ingin Meminta data Tanggung Jawab?
+                <form action="<?= base_url('Jurnal/tanggungan') ?>" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="<?= $Proposal->id_proposal ?>" name="id_proposal" />
+                    <input type="hidden" value="Pending" name="tanggungan" />
+                    <div class="form-group">
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="submit"><strong>Benar</strong></button>
+                <button class="btn btn-outline-secondary" type="button" data-dismiss="modal">Cancel</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
 <!------------------------------------------------------------------------------------------------------------------------->
 <!-- PROPOSAL -->
 <!-- Konfirmasi Modal-->

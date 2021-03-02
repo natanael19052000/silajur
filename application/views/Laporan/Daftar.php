@@ -6,10 +6,9 @@
                 <table class="table table-bordered table-hover data">
                     <thead>
                         <tr>
-                            <th class="font-weight-bold text-center"> ID Proposal </th>
-                            <th class="font-weight-bold"> Pengaju </th>
+                            <th class="font-weight-bold"> ID Proposal </th>
+                            <th class="font-weight-bold"> Tanggal Agenda </th>
                             <th class="font-weight-bold"> Agenda </th>
-                            <th class="font-weight-bold text-center"> Tanggal Agenda </th>
                             <th class="font-weight-bold text-center"> Aksi </th>
                         </tr>
                     </thead>
@@ -17,10 +16,9 @@
                         <?php
                         foreach ($Jurnal as $Jurnal) { ?>
                             <tr>
-                                <td align="center"><?php echo $Jurnal->id_proposal ?></td>
+                                <td><?php echo $Jurnal->id_proposal ?></td>
                                 <td><?php echo $Jurnal->tgl_agenda ?></td>
                                 <td><?php echo $Jurnal->agenda ?></td>
-                                <td align="center"><?php echo $Jurnal->record_tgl_jurnal ?></td>
                                 <td align="center">
                                     <a href="<?= base_url('Laporan/detail/' . $Jurnal->id_proposal); ?>" class="btn btn-primary btn-sm" role="button">
                                         Detail

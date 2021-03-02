@@ -13,13 +13,13 @@ class Dashboard extends CI_Controller{
 		// Pembeda tampilan dashboard antar level
 		if ($this->session->userdata('jabatan') == "Direksi"){
 		// jika jabatan direksi maka akan masuk ke dashboard direksi
-			$this->template->display('dashboard/direksi',$data); 
+			$this->template->display('Laporan'); 
 		}elseif ($this->session->userdata('jabatan') == "Divisi Umum") {
 		// jika jabatan divisi umum maka akan masuk ke dashboard divisi umum
-			$this->template->display('dashboard/umum',$data);
+			$this->template->display('Proposal');
 		}elseif ($this->session->userdata('jabatan') == "Divisi Keuangan") {
 		// jika jabatan divisi keuangan maka akan masuk ke dashboard divisi keuangan
-			$this->template->display('dashboard/keuangan',$data);
+			$this->template->display('Jurnal');
 		} else {
 		// jika jabatan selain ketiga diatas maka akan masuk ke dashboard divisi IT
 			$this->template->display('dashboard/it',$data);

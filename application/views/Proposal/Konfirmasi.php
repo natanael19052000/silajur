@@ -6,29 +6,39 @@
                 ID :
                 <strong><?= $Proposal->id_proposal; ?></strong>
                 <span class="float-right">
-                    <!-- Apabila status N/A maka muncul tombol Konfirmasi -->
-                    <?php if ($Proposal->status == "N/A") { ?>
-                        <a class="btn btn-primary" data-toggle="modal" data-target="#konfirmasiModal">
-                            <strong>Konfirmasi</strong>
-                        </a>
-                        <!-- Apabila status 1 maka muncul tombol Diterima -->
-                    <?php } elseif ($Proposal->status == "1") { ?>
-                        <a class="btn btn-success btn-icon-split">
+                    <!-- Jika ada tanggungan -->
+                    <?php if ($Proposal->tanggungan == "Pending") { ?>
+                        <a class="btn btn-warning btn-icon-split">
                             <span class="icon text-white-50">
-                                <i class="fas fa-check"></i>
+                                <i class="fas fa-spinner"></i>
                             </span>
-                            <span class="text"><strong>Diterima</strong></span>
+                            <span class="text"><strong>Tanggungan</strong></span>
                         </a>
-                        <!-- Apabila status 0 muncul tombol Ditolak -->
                     <?php } else { ?>
-                        <a class="btn btn-danger btn-icon-split">
-                            <span class="icon text-white-50">
-                                <i class="fas fa-times"></i>
-                            </span>
-                            <span class="text"><strong>Ditolak</strong></span>
-                        </a>
+                        <!-- Apabila status N/A maka muncul tombol Konfirmasi -->
+                        <?php if ($Proposal->status == "N/A") { ?>
+                            <a class="btn btn-primary" data-toggle="modal" data-target="#konfirmasiModal">
+                                <strong>Konfirmasi</strong>
+                            </a>
+                            <!-- Apabila status 1 maka muncul tombol Diterima -->
+                        <?php } elseif ($Proposal->status == "1") { ?>
+                            <a class="btn btn-success btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-check"></i>
+                                </span>
+                                <span class="text"><strong>Diterima</strong></span>
+                            </a>
+                            <!-- Apabila status 0 muncul tombol Ditolak -->
+                        <?php } else { ?>
+                            <a class="btn btn-danger btn-icon-split">
+                                <span class="icon text-white-50">
+                                    <i class="fas fa-times"></i>
+                                </span>
+                                <span class="text"><strong>Ditolak</strong></span>
+                            </a>
+                        <?php } ?>
+                        <!-- END -->
                     <?php } ?>
-                    <!-- END -->
                 </span>
             </div>
             <!-- Body -->
@@ -45,7 +55,7 @@
                     <h3><strong>Detail Proposal</strong></h3>
                 </div>
                 <!-- form -->
-                <form class="forms-sample">
+                <form action="<?= base_url('Jurnal/tanggungan_up') ?>" method="POST" enctype="multipart/form-data">
                     <div class="form-group row">
                         <label class="col-sm-3 col-form-label">Pengaju Proposal</label>
                         <div class="col-sm-9">
@@ -86,10 +96,43 @@
                                 <textarea type="text" rows="6" class="form-control" disabled><?= $Proposal->catatan; ?></textarea>
                             </div>
                         </div>
+                    <?php } elseif ($Proposal->tanggungan == "Pending") { ?>
+                        <?php if ($this->session->userdata('jabatan') == "Divisi Umum") { ?>
+                            <input type="hidden" value="<?= $Proposal->id_proposal ?>" name="id_proposal" />
+                            <div class="form-group row">
+                                <label class="col-sm-3 col-form-label">Dokumen Pertanggung Jawaban</label>
+                                <div class="col-sm-6">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="tanggungan" name="tanggungan">
+                                        <label class="custom-file-label" for="dok-proposal">Choose file</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="float-right mt-5 mb-2">
+                                <button class="btn btn-success" type="submit">
+                                    Submit
+                                </button>
+                            </span>
+                        <?php } ?>
+                    <?php 
+                }elseif ($Proposal->tanggungan != "Pending" && $Proposal->tanggungan != NULL&& $Proposal->tanggungan != "Done")
+                {?>
+                        <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Lampiran Tanggungan</label>
+                        <div class="col-sm-9 mt-2">
+                            <a href="<?= base_url('Proposal/download_tanggungan/' . $Proposal->tanggungan); ?>">
+                                <?= $Proposal->tanggungan ?>
+                            </a>
+                        </div>
+                    </div>
                     <?php } ?>
                     <!-- End catatan -->
                 </form>
-                <a type="button" href="<?= base_url('Proposal/persetujuan') ?>" class="btn btn-outline-secondary mt-5 mb-4">
+                <a type="button" href="<?php if ($this->session->userdata('jabatan') == "Direksi") {
+                    echo base_url('Proposal/persetujuan');
+                }else {
+                    echo base_url('Proposal');
+                }?>" class="btn btn-outline-secondary mt-5 mb-4">
                     Kembali
                 </a>
             </div>

@@ -63,7 +63,15 @@ class Proposal extends CI_Controller{
 	function download($proposal){
 		$this->load->helper('download');
 		$name = $proposal;
-		$data = file_get_contents('./assets/uploads/proposal/' . $proposal);
+		$data = file_get_contents('./assets/uploads/Proposal/' . $proposal);
+		force_download($name, $data);
+		redirect('Proposal');
+	}
+	// Download Tanggungan
+	function download_tanggungan($proposal){
+		$this->load->helper('download');
+		$name = $proposal;
+		$data = file_get_contents('./assets/uploads/Tanggungan/' . $proposal);
 		force_download($name, $data);
 		redirect('Proposal');
 	}

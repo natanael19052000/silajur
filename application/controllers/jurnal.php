@@ -24,10 +24,10 @@ class Jurnal extends CI_Controller{
 	function detail($id_proposal = null){
 		$data = array('title' 		=> 'Detail',
 						'Proposal' 	=> $this->M_jurnal->proposal($id_proposal),
-						'Jurnal' 	=> $this->M_jurnal->jurnal($id_proposal));
+						'Jurnal' 	=> $this->M_jurnal->datajurnal($id_proposal));
 		$this->template->display('jurnal/Detail', $data);
 	}
-	// Mengupload File Proposal
+	// Mengupload File Jurnal
 	function do_upload(){
 		$nama = $this->input->post('agenda');
 		$config['upload_path']          = './assets/uploads/Jurnal/';
@@ -39,12 +39,44 @@ class Jurnal extends CI_Controller{
 		$this->upload->initialize($config);
 		// Jika File Sudah terupload
 		if ($this->upload->do_upload('dok_jurnal')) {
-			$data = ['dok_jurnal'	=> $this->upload->data('file_name'),
-					'nip_jurnal' => $this->session->userdata('nip')];
+			$data = [
+				'dok_jurnal'	=> $this->upload->data('file_name'),
+				'nip_jurnal' 	=> $this->session->userdata('nip')
+			];
+			$tanggungan = ['tanggungan' => "Done"];
 			$where = ['id_proposal'	=> $this->input->post('id_proposal')];
 			//kalau form diisi dengan benar maka simpan data ke table user
 			$this->M_jurnal->upload($where,$data);
+			$this->M_proposal->catatan($tanggungan, $where);
 			redirect('Jurnal');
+		} else {
+			echo "Possible file upload attack!\n";
+		}
+	}
+	// Tanggungan
+	function tanggungan(){
+		$tanggungan = ['tanggungan' => $this->input->post('tanggungan')];
+		$where = ['id_proposal'	=> $this->input->post('id_proposal')];
+		$this->M_proposal->catatan($tanggungan, $where);
+		redirect('Jurnal');
+	}
+	// Tanggungan Upload
+	function tanggungan_up(){
+		$nama = $this->input->post('id_proposal');
+		$config['upload_path']          = './assets/uploads/Tanggungan/';
+		$config['allowed_types']        = 'pdf|doc|docx|rar';
+		$config['max_size']             = 10000; // 10 MB
+		$config['file_name'] = time() . '-' . date("Ymd") . '-Tanggungan-' . $nama;
+		// memakai LIBRARY UPLOAD
+		$this->load->library('upload', $config);
+		$this->upload->initialize($config);
+		// Jika File Sudah terupload
+		if ($this->upload->do_upload('tanggungan')) {
+			$tanggungan = ['tanggungan' => $this->upload->data('file_name')];
+			$where = ['id_proposal'	=> $this->input->post('id_proposal')];
+			//kalau form diisi dengan benar maka simpan data 
+			$this->M_proposal->catatan($tanggungan, $where);
+			redirect('Proposal');
 		} else {
 			echo "Possible file upload attack!\n";
 		}
