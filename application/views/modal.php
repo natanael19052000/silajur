@@ -117,7 +117,6 @@
 
 <!------------------------------------------------------------------------------------------------------------------------------------------------------------>
 <!-- JURNAL -->
-
 <!-- Konfirmasi Modal-->
 <div class="modal fade" id="konfirmasiJurnalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -178,6 +177,27 @@
                         <label class="col-form-label">Catatan :</label>
                         <textarea type="text" rows="4" name="catatan" class="form-control"></textarea>
                     </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success">submit</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- Modal Tambah Nominatif -->
+<div class="modal fade" id="nominatifModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Daftar Nominatif</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            Isikan Data Berikut
             </div>
             <div class="modal-footer">
                 <button class="btn btn-success">submit</button>

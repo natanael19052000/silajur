@@ -24,7 +24,7 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Dokumen Pendukung</label>
+                <label class="col-sm-3 col-form-label">Dokumen Proposal</label>
                 <div class="col-sm-9">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="dok_proposal" name="dok_proposal">
@@ -32,8 +32,16 @@
                     </div>
                 </div>
             </div>
-            <button class="btn btn-success mr-2" value="upload">Submit</button>
-            <button class="btn btn-outline-secondary ml-1">Cancel</button>
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Dokumen Pendukung</label>
+                <div class="col-sm-9">
+                    <a class="btn btn-info" data-toggle="modal" data-target="#nominatifModal">
+                        <strong>Konfirmasi</strong>
+                    </a>
+                </div>
+            </div>
+            <button class="btn btn-success mr-2 mt-lg-4" value="upload">Submit</button>
+            <button class="btn btn-outline-secondary ml-1 mt-lg-4">Cancel</button>
             </form>
         </div>
     </div>
