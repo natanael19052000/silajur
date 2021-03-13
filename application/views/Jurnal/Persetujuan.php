@@ -31,11 +31,11 @@
                                 </td>
                                 <td align="center">
                                     <?php
-                                    if ($Jurnal->status_jurnal == 0) { ?>
+                                    if ($Jurnal->status_jurnal == '0') { ?>
                                         <a href="<?= base_url('Jurnal/konfirmasi/' . $Jurnal->id_proposal); ?>" class="btn btn-danger btn-circle btn-sm">
                                             <i class="fas fa-times"></i>
                                         </a>
-                                    <?php } elseif ($Jurnal->status_jurnal == 1) { ?>
+                                    <?php } elseif ($Jurnal->status_jurnal == '1') { ?>
                                         <a href="<?= base_url('Jurnal/konfirmasi/' . $Jurnal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
                                             <i class="fas fa-check"></i>
                                         </a>

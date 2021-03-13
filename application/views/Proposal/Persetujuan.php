@@ -27,7 +27,7 @@
                                         <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-primary btn-sm" role="button">
                                             Konfirmasi
                                         </a>
-                                    <?php } elseif ($Proposal->status == 1) { ?>
+                                    <?php } elseif ($Proposal->status == '1') { ?>
                                         <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
                                             <i class="fas fa-check"></i>
                                         </a>

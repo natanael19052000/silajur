@@ -30,11 +30,11 @@
                                         </a>
                                         <?php }else{?>
                                         <?php
-                                        if ($Proposal->status == 0) { ?>
+                                        if ($Proposal->status == '0') { ?>
                                             <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-danger btn-circle btn-sm">
                                                 <i class="fas fa-times"></i>
                                             </a>
-                                        <?php } elseif ($Proposal->status == 1) { ?>
+                                        <?php } elseif ($Proposal->status == '1') { ?>
                                             <a href="<?= base_url('Proposal/konfirmasi/' . $Proposal->id_proposal); ?>" class="btn btn-success btn-circle btn-sm">
                                                 <i class="fas fa-check"></i>
                                             </a>
